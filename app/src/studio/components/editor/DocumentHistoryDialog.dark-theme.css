@@ -1,0 +1,127 @@
+html[data-theme='dark'] .workspace-page-version-history-dialog {
+  border-color: #36414a !important;
+  background: linear-gradient(160deg, #1b2228, #11171b 72%) !important;
+  color: #e2e7eb !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-header,
+html[data-theme='dark'] .workspace-page-version-history-list,
+html[data-theme='dark'] .workspace-page-version-history-footer {
+  border-color: #303b44 !important;
+  background: #171e23 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-preview {
+  background: #11171b !important;
+  color: #e2e7eb !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-header h2,
+html[data-theme='dark'] .workspace-page-version-history-preview pre,
+html[data-theme='dark'] .workspace-page-version-history-document-copy strong,
+html[data-theme='dark'] .workspace-page-version-history-document-option strong {
+  color: #e2e7eb !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-header p,
+html[data-theme='dark'] .workspace-page-version-history-picker-label,
+html[data-theme='dark'] .workspace-page-version-history-document-copy small,
+html[data-theme='dark'] .workspace-page-version-history-document-option small,
+html[data-theme='dark'] .workspace-page-version-history-item time,
+html[data-theme='dark'] .workspace-page-version-history-preview time,
+html[data-theme='dark'] .workspace-page-version-history-metadata dt,
+html[data-theme='dark'] .workspace-page-version-history-attachments h3,
+html[data-theme='dark'] .workspace-page-version-history-empty {
+  color: #a5afb8 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-document-trigger {
+  border-color: #36414a !important;
+  background: #11171b !important;
+  color: #e2e7eb !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-document-trigger:hover,
+html[data-theme='dark'] .workspace-page-version-history-document-trigger:focus-visible,
+html[data-theme='dark'] .workspace-page-version-history-document-trigger[aria-expanded='true'] {
+  border-color: #43515b !important;
+  background: #1a2228 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-document-menu {
+  border-color: #36414a !important;
+  background: #10161a !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32) !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-document-option {
+  color: #d4dde3 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-document-option:hover,
+html[data-theme='dark'] .workspace-page-version-history-document-option:focus-visible,
+html[data-theme='dark'] .workspace-page-version-history-document-option.is-selected,
+html[data-theme='dark'] .workspace-page-version-history-item:hover,
+html[data-theme='dark'] .workspace-page-version-history-item.is-selected {
+  border-color: #3c4b56 !important;
+  background: #202a31 !important;
+  color: #e2e7eb !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-close,
+html[data-theme='dark'] .workspace-page-version-history-cancel,
+html[data-theme='dark'] .workspace-page-version-history-copy {
+  border-color: #36414a !important;
+  background: #1a2228 !important;
+  color: #d4dde3 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-close:hover,
+html[data-theme='dark'] .workspace-page-version-history-cancel:hover,
+html[data-theme='dark'] .workspace-page-version-history-copy:hover:not(:disabled),
+html[data-theme='dark'] .workspace-page-version-history-dialog button:hover:not(:disabled),
+html[data-theme='dark'] .workspace-page-version-history-dialog button:active:not(:disabled) {
+  border-color: #43515b !important;
+  background: #202a31 !important;
+  color: #f2f7fa !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-restore {
+  border-color: transparent !important;
+  background: transparent !important;
+  color: #a5afb8 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-restore:hover:not(:disabled) {
+  background: transparent !important;
+  color: #73c3ff !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-list,
+html[data-theme='dark'] .workspace-page-version-history-preview,
+html[data-theme='dark'] .workspace-page-version-history-document-menu {
+  scrollbar-color: #596974 #20282e !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-list::-webkit-scrollbar-track,
+html[data-theme='dark'] .workspace-page-version-history-preview::-webkit-scrollbar-track,
+html[data-theme='dark'] .workspace-page-version-history-document-menu::-webkit-scrollbar-track {
+  background: #20282e !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-list::-webkit-scrollbar-thumb,
+html[data-theme='dark'] .workspace-page-version-history-preview::-webkit-scrollbar-thumb,
+html[data-theme='dark'] .workspace-page-version-history-document-menu::-webkit-scrollbar-thumb {
+  border-color: #20282e !important;
+  background: #596974 !important;
+}
+
+html[data-theme='dark'] .workspace-page-version-history-list::-webkit-scrollbar-thumb:hover,
+html[data-theme='dark'] .workspace-page-version-history-preview::-webkit-scrollbar-thumb:hover,
+html[data-theme='dark'] .workspace-page-version-history-document-menu::-webkit-scrollbar-thumb:hover {
+  background: #73838e !important;
+}
+

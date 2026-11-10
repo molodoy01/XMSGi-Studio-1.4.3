@@ -1,0 +1,158 @@
+/* Global notification surface and status treatments. */
+.app-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: min(350px, calc(100vw - 40px));
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+  background: var(--surface-raised, #ffffff);
+  color: var(--text);
+  border: 1px solid var(--line, #e2e6ea);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft, 0 8px 28px rgba(34, 47, 58, 0.12));
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.22, .61, .36, 1), visibility 0.3s ease;
+}
+
+.app-notification.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.app-notification.success { border-color: rgba(121, 200, 138, 0.42); }
+.app-notification.warning { border-color: rgba(214, 177, 94, 0.48); }
+.app-notification.info { border-color: rgba(154, 168, 184, 0.34); }
+.app-notification.error { border-color: rgba(208, 111, 111, 0.5); }
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(154, 168, 184, 0.32);
+  border-radius: 50%;
+  background: rgba(154, 168, 184, 0.12);
+  color: var(--signal);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.notification-content { min-width: 0; flex: 1; }
+
+.notification-title {
+  margin-bottom: 3px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notification-message {
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.notification-close {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--dim);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.notification-close:hover,
+.notification-close:focus-visible {
+  background: transparent;
+  color: var(--text);
+  opacity: 1;
+  transform: none;
+}
+
+.app-notification.success .notification-icon {
+  background: rgba(121, 200, 138, 0.14);
+  color: #79c88a;
+  border-color: rgba(121, 200, 138, 0.55);
+}
+
+.app-notification.warning .notification-icon {
+  background: rgba(214, 177, 94, 0.14);
+  color: #d6b15e;
+  border-color: rgba(214, 177, 94, 0.72);
+}
+
+.app-notification.info .notification-icon {
+  background: rgba(154, 168, 184, 0.14);
+  color: var(--signal);
+  border-color: rgba(154, 168, 184, 0.5);
+}
+
+.app-notification.error .notification-icon {
+  background: #fff0ef;
+  color: #b42318;
+  border-color: #d17e76;
+}
+
+html[data-theme='dark'] .app-notification.error .notification-icon {
+  background: rgba(255, 147, 139, 0.12);
+  color: #ff938b;
+  border-color: rgba(255, 147, 139, 0.48);
+}
+
+html[data-theme='light'] .app-notification.warning .notification-icon {
+  background: #fff0c2;
+  color: #694900;
+  border-color: #c28b1b;
+}
+
+html[data-theme='light'] .app-notification.success .notification-icon {
+  background: #e8f4ec;
+  color: #267544;
+  border-color: #71a783;
+}
+
+html[data-theme='light'] .app-notification.info .notification-icon {
+  background: #e8edf1;
+  color: #43576a;
+  border-color: #91a0ad;
+}
+
+html[data-theme='light'] .app-notification.error .notification-message,
+html[data-theme='light'] .app-notification.shell-notification.error .notification-message {
+  color: #242a31;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .app-notification {
+    top: 12px;
+    right: 12px;
+    width: calc(100vw - 24px);
+  }
+}

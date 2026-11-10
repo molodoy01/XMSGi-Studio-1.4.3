@@ -1,0 +1,567 @@
+@media (max-width: 600px) {
+  .chat-picker-menu {
+    width: min(400px, calc(100vw - 24px));
+  }
+}
+
+.chat-picker-menu {
+  display: none;
+  left: 0;
+  right: 0;
+  top: calc(100% + 2px);
+  width: auto;
+  max-height: 253px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0;
+  border-bottom: 3px solid var(--line);
+  background: var(--ink);
+  box-shadow: none;
+  overflow-y: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition: none;
+}
+
+.chat-picker-menu.open {
+  display: block;
+}
+
+.chat-picker-search-wrap {
+  padding: 10px 12px 8px;
+  background: var(--ink);
+}
+
+.chat-picker-search {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--void);
+  font-size: 12px;
+}
+
+.chat-picker-list {
+  display: block;
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+}
+
+.chat-option {
+  display: flex;
+  grid-template-columns: none;
+  gap: 0;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.chat-option:hover,
+.chat-option:focus-visible {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.chat-option-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-option-name {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.chat-option-type {
+  font-size: 10px;
+}
+
+.chat-option-selected,
+.chat-option-remove {
+  margin-left: 8px;
+}
+
+.chat-picker-empty {
+  padding: 18px 12px;
+}
+
+.chat-picker-current {
+  height: 36px;
+  padding: 0 2px;
+}
+
+.chat-picker-current::after {
+  right: 4px;
+  width: 6px;
+  height: 6px;
+  border-right-width: 1.5px;
+  border-bottom-width: 1.5px;
+}
+
+.chat-picker-menu {
+  top: calc(100% + 2px);
+  max-height: 240px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+  overflow-y: auto;
+}
+
+/* Keep the glow fixed to the absolute menu viewport, independent of list scrolling. */
+.chat-picker-menu {
+  position: absolute !important;
+  background: #ffffff !important;
+}
+
+.chat-picker-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: 34px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.045) 28%,
+    rgba(255, 255, 255, 0.018) 58%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.chat-add,
+.chat-option {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  font-size: 13px;
+}
+
+.chat-add {
+  gap: 8px;
+  color: var(--dim);
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.chat-add:hover,
+.chat-option:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.chat-option:hover {
+  border-bottom-color: rgba(111, 155, 124, 0.45);
+}
+
+.chat-option.selected {
+  color: var(--signal);
+  font-weight: 600;
+}
+
+.chat-add-form {
+  padding: 3px 12px 7px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(154, 168, 184, 0.12);
+  background: transparent;
+}
+
+.chat-add-form input {
+  height: 34px;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 1px solid rgba(154, 168, 184, 0.26);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.chat-add-form input::placeholder {
+  color: rgba(154, 168, 184, 0.68);
+  opacity: 1;
+}
+
+.chat-add-form input:focus {
+  border-bottom-color: rgba(226, 230, 235, 0.72);
+  outline: none;
+}
+
+.chat-add-button {
+  height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--signal);
+  border-radius: 0;
+  background: transparent;
+  color: var(--signal);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+
+.chat-add-button:hover {
+  background: var(--signal);
+  color: var(--void);
+}
+
+/* Match the compact spacing of the main screen while keeping the preview row style. */
+.chat-picker-menu .chat-option {
+  min-height: 40px !important;
+  padding: 4px 10px !important;
+}
+
+.chat-picker-menu .chat-option-avatar {
+  width: 30px;
+  height: 30px;
+  flex-basis: 30px;
+  font-size: 12px;
+}
+
+/* Borderless chat surface: keep the existing geometry, soften only the frame. */
+.chat-picker-menu {
+  border: 0 !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-radius: 2px !important;
+  background: #ffffff !important;
+  box-shadow: 0 14px 28px rgba(34, 47, 58, 0.14) !important;
+}
+
+.chat-picker-menu .chat-add-form {
+  border-bottom-color: rgba(154, 168, 184, 0.08);
+}
+
+.chat-picker-menu .chat-option {
+  border-bottom-color: rgba(154, 168, 184, 0.08);
+}
+
+.chat-picker-menu .chat-option:hover,
+.chat-picker-menu .chat-option:focus-visible {
+  background: rgba(154, 168, 184, 0.055);
+  border-bottom-color: rgba(154, 168, 184, 0.1);
+}
+
+.chat-picker-menu .chat-option.selected {
+  background: rgba(111, 155, 124, 0.08);
+  border-bottom-color: rgba(111, 155, 124, 0.16);
+}
+
+/* Final visual pass for the existing popup geometry. */
+.chat-picker-menu::before {
+  height: 24px;
+  background: linear-gradient(180deg, rgba(71, 124, 158, 0.055), rgba(71, 124, 158, 0.018) 48%, transparent);
+}
+
+.chat-picker-menu .chat-add-form {
+  border-bottom-color: rgba(154, 168, 184, 0.12);
+}
+
+.chat-picker-menu .chat-add-form input {
+  border-bottom-color: rgba(154, 168, 184, 0.2);
+}
+
+.chat-picker-menu .chat-add-form input::placeholder {
+  color: rgba(154, 168, 184, 0.52);
+}
+
+.chat-picker-menu .chat-add-button {
+  border-color: rgba(111, 155, 124, 0.68);
+  color: rgba(190, 220, 198, 0.92);
+}
+
+.chat-picker-menu .chat-add-button:hover:not(:disabled),
+.chat-picker-menu .chat-add-button:focus-visible {
+  background: rgba(111, 155, 124, 0.16);
+  color: var(--text);
+}
+
+.chat-picker-menu .chat-option {
+  border: 0 !important;
+  border-bottom: 0 !important;
+  background: transparent !important;
+}
+
+.chat-picker-menu .chat-option:hover,
+.chat-picker-menu .chat-option:focus-visible {
+  background: rgba(154, 168, 184, 0.045) !important;
+  border: 0 !important;
+}
+
+.chat-picker-menu .chat-option.selected {
+  background: rgba(154, 168, 184, 0.045) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: var(--text) !important;
+}
+
+.chat-picker-menu .chat-option-type {
+  color: rgba(154, 168, 184, 0.72);
+}
+
+.chat-picker-menu {
+  max-height: min(240px, calc(100vh - 120px)) !important;
+  overflow: hidden !important;
+}
+
+.chat-picker-scroll-area {
+  max-height: inherit;
+  padding-right: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.chat-picker-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-picker-scrollbar {
+  position: absolute;
+  z-index: 12;
+  top: 6px;
+  right: 3px;
+  bottom: 6px;
+  width: 9px;
+  border-left: 1px solid rgba(154, 168, 184, 0.2);
+  border-radius: 999px;
+  background: rgba(154, 168, 184, 0.12);
+  cursor: default;
+  outline: none;
+  touch-action: none;
+  transition: background-color 140ms ease, border-color 140ms ease;
+  user-select: none;
+}
+
+.chat-picker-scrollbar:hover,
+.chat-picker-scrollbar:active {
+  border-left-color: rgba(154, 168, 184, 0.42);
+  background: rgba(154, 168, 184, 0.24);
+}
+
+.chat-picker-scrollbar:focus-visible {
+  box-shadow: 0 0 0 2px rgba(154, 168, 184, 0.24);
+}
+
+.chat-picker-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 6px;
+  min-height: 20px;
+  border-radius: inherit;
+  background: rgba(196, 210, 222, 0.82);
+  box-shadow: 0 0 3px rgba(196, 210, 222, 0.16);
+  cursor: default;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.chat-picker-scrollbar:hover .chat-picker-scrollbar-thumb {
+  background: rgba(232, 239, 244, 0.96);
+  box-shadow: 0 0 7px rgba(196, 210, 222, 0.42);
+}
+
+.chat-picker-scrollbar:active .chat-picker-scrollbar-thumb {
+  background: rgba(220, 230, 238, 0.94);
+  box-shadow: 0 0 8px rgba(196, 210, 222, 0.5);
+}
+
+.moment-field + .action-button:not(.schedule-success),
+.moment-field + .action-button:not(.schedule-success):hover,
+.moment-field + .action-button:not(.schedule-success):focus,
+.moment-field + .action-button:not(.schedule-success):focus-visible,
+.moment-field + .action-button:not(.schedule-success):active {
+  border-color: rgba(193, 205, 218, 0.28) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.moment-field + .action-button:not(.schedule-success) {
+  border-color: rgba(193, 205, 218, 0.28) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.moment-field + .action-button:not(.schedule-success):hover {
+  border-color: rgba(154, 168, 184, 0.58) !important;
+  background: transparent !important;
+  box-shadow: inset 0 0 0 1px rgba(154, 168, 184, 0.58) !important;
+}
+
+.moment-field + .action-button:not(.schedule-success):active {
+  transform: translateY(1px) !important;
+}
+
+.chat-picker-menu::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(196, 210, 222, 0.82);
+  background-clip: padding-box;
+}
+
+.chat-picker-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 168, 184, 0.42);
+  background-clip: padding-box;
+}
+
+/* Keep the selected-chat underline quiet in every interaction state. */
+.chat-field .chat-picker-current,
+.chat-field .chat-picker-current:focus-visible,
+.chat-field .chat-picker.is-open .chat-picker-current {
+  border-bottom-color: rgba(154, 168, 184, 0.14) !important;
+}
+
+.chat-field .chat-picker-current:hover {
+  border-bottom-color: rgba(226, 230, 235, 0.58) !important;
+}
+
+.chat-picker-menu .chat-option.selected,
+.chat-picker-menu .chat-option.selected:hover,
+.chat-picker-menu .chat-option.selected:focus,
+.chat-picker-menu .chat-option.selected:focus-visible {
+  border-bottom: 0 !important;
+}
+
+.chat-picker-menu .chat-option:not(.selected):hover,
+.chat-picker-menu .chat-option:not(.selected):focus,
+.chat-picker-menu .chat-option:not(.selected):focus-visible {
+  border-bottom: 1px solid rgba(154, 168, 184, 0.12) !important;
+}
+
+/* Keep the open list clean; show one quiet separator only on hover. */
+.chat-picker-menu .chat-option,
+.chat-picker-menu .chat-option:focus,
+.chat-picker-menu .chat-option:focus-visible {
+  position: relative;
+  border-bottom: 0 !important;
+  transition: background-color 120ms ease, color 120ms ease !important;
+}
+
+.chat-picker-menu .chat-option:hover,
+.chat-picker-menu .chat-option:focus-visible,
+.chat-picker-menu .chat-option.selected:hover,
+.chat-picker-menu .chat-option.selected:focus-visible {
+  border-bottom: 2px solid rgba(154, 168, 184, 0.2) !important;
+  transition: background-color 120ms ease, color 120ms ease !important;
+}
+
+.chat-field .chat-picker-current {
+  gap: 0;
+}
+
+.chat-field .chat-picker-current,
+.chat-field .chat-picker-current:focus-visible,
+.chat-field .chat-picker.is-open .chat-picker-current {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+  border-bottom-color: transparent !important;
+  background-image: linear-gradient(rgba(154, 168, 184, 0.26), rgba(154, 168, 184, 0.26));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+}
+
+.chat-field .chat-picker-menu {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100%;
+  margin-left: 0;
+}
+
+.chat-field .chat-picker-current-avatar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(calc(-50% - 2px));
+}
+
+.chat-field .chat-picker-current-copy {
+  width: 100%;
+  margin-left: 0;
+  padding-left: 38px;
+}
+
+.chat-field .chat-picker-current:hover {
+  border-bottom-color: transparent !important;
+  background-image: linear-gradient(rgba(226, 230, 235, 0.58), rgba(226, 230, 235, 0.58));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+}
+
+.chat-field .chat-picker-current::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  width: 9px;
+  height: 1.3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateY(-50%) rotate(38deg);
+  transform-origin: right center;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1), color 160ms ease;
+}
+
+.chat-field .chat-picker-current::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 9px;
+  height: 1.3px;
+  border: 0;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateY(-50%) rotate(-38deg);
+  transform-origin: left center;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1), color 160ms ease;
+}
+
+.chat-field .chat-picker-current:hover::before,
+.chat-field .chat-picker-current:focus-visible::before,
+.chat-field .chat-picker.is-open .chat-picker-current::before,
+.chat-field .chat-picker-current:hover::after,
+.chat-field .chat-picker-current:focus-visible::after,
+.chat-field .chat-picker.is-open .chat-picker-current::after {
+  opacity: 1;
+  color: rgba(223, 232, 241, 0.78);
+}
+
+.chat-field .chat-picker.is-open .chat-picker-current::before {
+  transform: translateY(-50%) rotate(218deg);
+}
+
+.chat-field .chat-picker.is-open .chat-picker-current::after {
+  transform: translateY(-50%) rotate(142deg);
+}

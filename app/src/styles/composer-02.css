@@ -1,0 +1,571 @@
+.moment-controls input[type="date"] {
+  width: 158px;
+}
+
+.moment-controls input[type="time"] {
+  width: 118px;
+}
+
+.moment-controls input:hover {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(154, 168, 184, 0.3) !important;
+}
+
+.moment-controls input[type="date"]::-webkit-calendar-picker-indicator,
+.moment-controls input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.65);
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.moment-controls input[type="time"]::-webkit-calendar-picker-indicator {
+  margin-left: 19px;
+  margin-right: 0;
+}
+
+.moment-field {
+  margin-top: 0;
+}
+
+.moment-field .schedule-row {
+  width: 100%;
+  margin: 0;
+}
+
+.moment-field .moment-controls {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 168px;
+}
+
+.moment-date-display,
+.moment-time-display {
+  pointer-events: auto;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.moment-segment {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.moment-segment:focus {
+  background: rgba(193, 203, 214, 0.08);
+  border-radius: 3px;
+}
+
+.moment-native-picker {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.moment-native-date-picker {
+  top: 0;
+  height: 90px;
+  color-scheme: dark;
+  accent-color: #25404b;
+}
+
+.moment-native-time-picker {
+  top: 105px;
+  height: 100px;
+}
+
+.moment-date-icon,
+.moment-time-icon {
+  flex-shrink: 0;
+  color: rgba(193, 203, 214, 0.72);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.moment-time-icon {
+  margin-left: 0;
+  transform: translateX(-7px);
+}
+
+.moment-date-display {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+  max-width: 100%;
+  color: rgba(232, 237, 242, 0.9);
+  font-family: "Segoe UI Light", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  transform: translateX(calc(-50% + 10px));
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: background-color 0.16s ease;
+}
+
+.moment-date-display:hover,
+.moment-date-display:focus-within,
+.moment-time-display:hover,
+.moment-time-display:focus-within {
+  background-color: rgba(193, 203, 214, 0.055);
+  box-shadow: inset 0 0 0 1px rgba(193, 203, 214, 0.16), 0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+.moment-day,
+.moment-month,
+.moment-year {
+  font-family: "Segoe UI Light", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(17px, 1.7vw, 26px);
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: rgba(237, 241, 245, 0.82);
+  font-variant-numeric: tabular-nums;
+}
+
+.moment-day,
+.moment-month {
+  width: 2ch;
+}
+
+.moment-year {
+  width: 4ch;
+}
+
+.moment-date-display .moment-segment {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.moment-date-display .moment-day,
+.moment-date-display .moment-month {
+  width: 3.8ch;
+  flex: 0 0 3.8ch;
+}
+
+.moment-date-display .moment-year {
+  width: 6.8ch;
+  flex: 0 0 6.8ch;
+}
+
+.moment-date-separator {
+  color: rgba(165, 177, 191, 0.42);
+  font-size: clamp(15px, 1.7vw, 22px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.moment-year {
+  margin-top: 0;
+  color: rgba(193, 203, 214, 0.72);
+}
+
+.moment-time-display {
+  position: absolute;
+  z-index: 1;
+  top: 90px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: max-content;
+  max-width: 100%;
+  color: rgba(238, 242, 246, 0.8);
+  font-family: "Segoe UI Light", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(30px, 3.2vw, 52px);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+  transform: translateX(calc(-50% - 4px));
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background-color 0.16s ease;
+}
+
+.moment-time-display .moment-segment {
+  width: 2.8ch;
+  flex: 0 0 2.8ch;
+  height: 1em;
+  min-height: 1em;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.moment-time-display .moment-time-minutes {
+  margin-left: 0;
+}
+
+.moment-time-separator {
+  color: rgba(193, 203, 214, 0.72);
+  font: inherit;
+  line-height: inherit;
+}
+
+.moment-time-display .moment-segment:focus,
+.moment-time-display .moment-segment:focus-visible {
+  background: transparent !important;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px rgba(154, 168, 184, 0.24), inset 0 -1px 0 rgba(193, 203, 214, 0.2) !important;
+}
+
+.moment-time-display:hover {
+  box-shadow: inset 0 0 0 1px rgba(193, 203, 214, 0.2), 0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+.moment-time-display .moment-time-hours:hover,
+.moment-time-display .moment-time-minutes:hover {
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(154, 168, 184, 0.28), inset 0 -1px 0 rgba(193, 203, 214, 0.2) !important;
+}
+
+.moment-time-display:hover {
+  background-color: rgba(193, 203, 214, 0.025);
+  box-shadow: inset 0 0 0 1px rgba(193, 203, 214, 0.12) !important;
+}
+
+.moment-date-display:hover {
+  background-color: rgba(193, 203, 214, 0.025);
+  box-shadow: inset 0 0 0 1px rgba(193, 203, 214, 0.12) !important;
+}
+
+.moment-date-display .moment-segment,
+.moment-time-display .moment-segment {
+  box-shadow: inset 0 -1px 0 rgba(193, 203, 214, 0.2) !important;
+}
+
+.start-screen-time-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: grid;
+  width: min(168px, calc(100vw - 24px));
+  padding: 8px;
+  border: 1px solid rgba(154, 168, 184, 0.18);
+  border-radius: 10px;
+  background: rgba(30, 35, 41, 0.98);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.start-screen-time-manual {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 7px;
+  color: rgba(234, 238, 242, 0.86);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.start-screen-time-manual-fields {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 5px;
+}
+
+.start-screen-time-manual input {
+  width: 100%;
+  min-height: 32px;
+  padding: 0 8px;
+  border: 1px solid rgba(154, 168, 184, 0.22);
+  border-radius: 6px;
+  background: rgba(48, 54, 61, 0.95);
+  color: #e7ebf0;
+  font: inherit;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.start-screen-time-manual-fields b {
+  color: rgba(234, 238, 242, 0.8);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.start-screen-time-manual input:focus {
+  border-color: rgba(255, 153, 0, 0.8);
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(255, 153, 0, 0.2);
+}
+
+.start-screen-time-list {
+  width: 100%;
+  height: 156px;
+  min-height: 156px;
+  padding: 3px;
+  border: 1px solid rgba(154, 168, 184, 0.1);
+  border-radius: 7px;
+  background: rgba(48, 54, 61, 0.95);
+  color: #e7ebf0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  color-scheme: dark;
+}
+
+.start-screen-time-list:focus {
+  outline: none;
+}
+
+.start-screen-time-list option {
+  min-height: 27px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: transparent;
+  color: #e7ebf0;
+}
+
+.start-screen-time-list option:checked,
+.start-screen-time-list option:hover {
+  background: rgba(88, 104, 118, 0.52);
+  color: #ffffff;
+}
+
+.action-button {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  height: 48px;
+  border: 1px solid rgba(193, 205, 218, 0.8);
+  background: rgba(18, 22, 26, 0.72);
+  color: #f2f7fb;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(193, 205, 218, 0.08);
+  filter: none;
+  text-shadow: none;
+  transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.action-button:hover:not(:disabled) {
+  border-color: rgba(159, 210, 172, 0.92);
+  background: rgba(18, 22, 26, 0.72);
+  color: #f9fcfa;
+  box-shadow: 0 0 10px rgba(193, 205, 218, 0.08);
+}
+
+.action-button:focus,
+.action-button:focus-visible {
+  box-shadow: 0 0 10px rgba(193, 205, 218, 0.08);
+  outline: none;
+}
+
+.action-button:active {
+  border-color: var(--ok);
+  background: rgba(18, 22, 26, 0.72);
+  color: #edf6ee;
+  box-shadow: 0 0 10px rgba(193, 205, 218, 0.08);
+  transform: none;
+}
+
+.action-button.schedule-success {
+  border-color: var(--ok) !important;
+  color: #edf6ee !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  cursor: default !important;
+  opacity: 1 !important;
+}
+
+.moment-field + .action-button {
+  position: relative;
+  left: 14px;
+}
+
+.moment-field .moment-controls {
+  left: 5px;
+}
+
+.moment-field + .action-button {
+  left: 19px;
+}
+
+.product-shell.studio-shell .moment-field .moment-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: min(100%, 520px);
+  min-height: 0;
+  margin: 0 auto;
+  left: 0;
+}
+
+.product-shell.studio-shell .moment-date-display,
+.product-shell.studio-shell .moment-time-display {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: 52px;
+  padding: 0 12px;
+  border: 1px solid rgba(154, 168, 184, 0.52);
+  border-radius: 10px;
+  background: rgba(14, 18, 24, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(193, 203, 214, 0.06);
+  transform: none;
+  overflow: hidden;
+}
+
+.product-shell.studio-shell .moment-date-display {
+  flex: 7 1 0;
+  width: auto;
+  min-width: 0;
+  color: rgba(232, 237, 242, 0.9);
+  font-family: "Segoe UI Light", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(17px, 1.7vw, 28px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-shell.studio-shell .moment-date-display .moment-day,
+.product-shell.studio-shell .moment-date-display .moment-month {
+  width: 2.8ch;
+  flex: 0 0 2.8ch;
+}
+
+.product-shell.studio-shell .moment-date-display .moment-year {
+  width: 5.4ch;
+  flex: 0 0 5.4ch;
+}
+
+.product-shell.studio-shell .moment-date-display .moment-segment,
+.product-shell.studio-shell .moment-time-display .moment-segment {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.product-shell.studio-shell .moment-date-display .moment-date-separator,
+.product-shell.studio-shell .moment-time-display .moment-time-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.9em;
+  color: rgba(193, 203, 214, 0.66);
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.product-shell.studio-shell .moment-date-icon,
+.product-shell.studio-shell .moment-time-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  color: rgba(193, 203, 214, 0.82);
+  opacity: 1;
+}
+
+.product-shell.studio-shell .moment-time-display {
+  flex: 3 1 0;
+  width: auto;
+  min-width: 0;
+  padding-right: 8px;
+  padding-left: 8px;
+  color: rgba(238, 242, 246, 0.8);
+  font-family: "Segoe UI Light", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-shell.studio-shell .moment-time-display .moment-segment {
+  width: 1.7ch;
+  flex: 0 0 1.7ch;
+}
+
+@media (max-width: 640px) {
+  .product-shell.studio-shell .moment-field .moment-controls {
+    width: 100%;
+    gap: 0;
+  }
+
+  .product-shell.studio-shell .moment-date-display,
+  .product-shell.studio-shell .moment-time-display {
+    min-height: 46px;
+    padding: 0 10px;
+    border-radius: 9px;
+  }
+
+  .product-shell.studio-shell .moment-date-display {
+    flex: 1.78 1 0;
+  }
+
+  .product-shell.studio-shell .moment-time-display {
+    flex: 1 1 0;
+  }
+
+  .product-shell.studio-shell .moment-date-display {
+    font-size: clamp(13px, 4vw, 22px);
+  }
+
+  .product-shell.studio-shell .moment-time-display {
+    font-size: clamp(16px, 5vw, 25px);
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+  .product-shell.studio-shell .moment-date-display .moment-day,
+  .product-shell.studio-shell .moment-date-display .moment-month {
+    width: 2.5ch;
+    flex-basis: 2.5ch;
+  }
+
+  .product-shell.studio-shell .moment-date-display .moment-year {
+    width: 4.4ch;
+    flex-basis: 4.4ch;
+  }
+
+  .product-shell.studio-shell .moment-time-display .moment-segment {
+    width: 1.55ch;
+    flex-basis: 1.55ch;
+  }
+}
+

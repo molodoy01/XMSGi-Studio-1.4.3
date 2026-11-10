@@ -1,0 +1,393 @@
+/* Keep the compact schedule summary and its options on one control row. */
+.workspace-page-schedule-flow {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  overflow-y: auto;
+}
+
+.workspace-page-schedule-summary-row {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.workspace-page-schedule-when-section {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 4px;
+  border: 0 !important;
+}
+
+.workspace-page-schedule-date-preset-row {
+  padding: 0;
+  white-space: nowrap;
+}
+
+.workspace-page-schedule-date-preset-row button {
+  min-height: 36px;
+  padding: 0 9px;
+}
+
+.workspace-page-schedule-selection-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  padding: 0;
+}
+
+.workspace-page-schedule-selection-field input,
+.workspace-page-schedule-selection-field select {
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(154, 168, 184, 0.28);
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(31, 36, 41, 0.96), rgba(25, 29, 33, 0.88));
+  color: rgba(236, 240, 245, 0.84);
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 rgba(255, 255, 255, 0.01);
+}
+
+.workspace-page-schedule-selection-field {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 5px;
+  min-width: 0;
+  white-space: nowrap;
+  transform: translateY(5px);
+}
+
+.workspace-page-schedule-selected-time {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 0;
+  white-space: nowrap;
+}
+
+.workspace-page-schedule-selected-time strong {
+  font-size: 12px;
+}
+
+.workspace-page-schedule-more {
+  grid-column: 1;
+  grid-row: auto;
+  width: auto;
+  min-height: 36px;
+  margin: 4px 0 0;
+  padding: 0 4px;
+  border-top: 0;
+  border-left: 0;
+  color: rgba(226, 230, 235, 0.72);
+  white-space: nowrap;
+}
+
+.workspace-page-schedule-extra {
+  grid-column: 1 / -1;
+}
+
+.workspace-page-schedule-repeat-section {
+  margin-top: -6px;
+}
+
+.workspace-page-rich-text-schedule-stage.is-repeat-focus {
+  transition: none;
+  transform: none;
+}
+
+.workspace-page-rich-text-schedule-stage.is-repeat-focus .workspace-page-schedule-extra,
+.workspace-page-rich-text-schedule-stage.is-repeat-focus .workspace-page-schedule-repeat-section {
+  animation: none;
+}
+
+.workspace-page-rich-text-schedule-stage.is-repeat-focus .workspace-page-schedule-flow {
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.workspace-page-rich-text-schedule-stage.is-repeat-focus .workspace-page-schedule-flow::-webkit-scrollbar {
+  display: none;
+}
+
+.workspace-page-rich-text-schedule-stage .workspace-page-mode-header .workspace-page-schedule-timezone {
+  display: block;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0 0 0 4px;
+  transform: translateY(3px);
+}
+
+.workspace-page-rich-text-schedule-stage .workspace-page-mode-header h2 {
+  grid-column: 1;
+  grid-row: 1;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .workspace-page-schedule-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace-page-schedule-when-section {
+    grid-column: 1;
+    grid-row: auto;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .workspace-page-schedule-selection-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workspace-page-schedule-selected-time {
+    justify-items: start;
+  }
+
+  .workspace-page-schedule-more {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    padding-left: 4px;
+    border-top: 1px solid rgba(154, 168, 184, 0.14);
+    border-left: 0;
+  }
+}
+
+@media (min-width: 761px) {
+  .workspace-page-main {
+    gap: 28px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .workspace-page-editor-panel {
+    order: 1;
+  }
+
+  .workspace-page-preview-panel {
+    order: 2;
+    flex-basis: 420px;
+    width: 420px;
+    max-width: 420px;
+    min-width: 420px;
+  }
+
+  .workspace-page-preview-panel[data-visible='false'] {
+    display: none;
+  }
+
+  .workspace-page-form-row-body {
+    flex: 1;
+    min-height: 220px;
+  }
+
+  .workspace-page-rich-text-editor {
+    flex: 1 1 auto;
+    height: auto;
+  }
+
+  .workspace-page-rich-text-input {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .workspace-page-preview-shell-desktop {
+    border-color: rgba(154, 168, 184, 0.2);
+    border-radius: 12px;
+    background: #15191e;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+  }
+
+  .workspace-page-preview-chat-header {
+    min-height: 56px;
+    height: 56px;
+    padding: 9px 14px;
+    border-bottom-color: rgba(154, 168, 184, 0.16);
+    background: rgba(17, 19, 22, 0.7);
+  }
+
+  .workspace-page-preview-feed-desktop {
+    gap: 9px;
+    padding: 16px 15px 20px;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(83, 103, 113, 0.12), transparent 44%),
+      #172027;
+  }
+
+  .workspace-page-preview-bubble {
+    max-width: 90%;
+    overflow: hidden;
+    border-radius: 13px 13px 4px 13px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  }
+
+  .workspace-page-preview-history-bubble.is-incoming {
+    border-top-left-radius: 4px;
+  }
+
+  .workspace-page-preview-draft-bubble {
+    max-width: 94%;
+    border-color: rgba(155, 210, 225, 0.3);
+    background: #2b4b5c;
+  }
+
+  .workspace-page-preview-message {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .workspace-page-preview-message strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .workspace-page-preview-message em {
+    font-style: italic;
+  }
+
+  .workspace-page-preview-message u {
+    text-underline-offset: 2px;
+  }
+
+  .workspace-page-preview-message s {
+    text-decoration-thickness: 1px;
+  }
+
+  .workspace-page-preview-message a {
+    color: #c5e9f4;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .workspace-page-preview-media {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .workspace-page-preview-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .workspace-page-preview-media.is-single .workspace-page-preview-image {
+    max-height: 280px;
+    object-fit: cover;
+  }
+
+  .workspace-page-preview-media.is-album .workspace-page-preview-image {
+    aspect-ratio: 1;
+  }
+
+  .workspace-page-preview-file {
+    max-width: 100%;
+    border: 1px solid rgba(155, 210, 225, 0.12);
+    border-radius: 7px;
+    background: rgba(12, 25, 31, 0.38);
+  }
+
+  .workspace-page-preview-meta {
+    align-items: center;
+    padding-top: 3px;
+  }
+
+  .workspace-page-rich-text-toolbar {
+    position: static;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    align-self: flex-end;
+    gap: 4px;
+    margin: 6px 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .workspace-page-rich-text-toolbar button {
+    width: 28px;
+    min-width: 28px;
+    height: 26px;
+    border-radius: 4px;
+  }
+
+  .workspace-page-rich-text-photo-slot {
+    width: 28px;
+    min-width: 28px;
+    height: 26px;
+    min-height: 26px;
+  }
+
+  .workspace-page-media-row {
+    min-height: 0;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 1101px) {
+  .workspace-page-main:has(.workspace-page-preview-panel[data-visible='false']) .workspace-page-editor-panel {
+    flex-basis: auto;
+  }
+
+  .workspace-page-preview-panel[data-visible='false'] {
+    display: flex;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .workspace-page-preview-panel {
+    flex-basis: 380px;
+    width: 380px;
+    max-width: 380px;
+    min-width: 380px;
+  }
+}
+
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-context-trigger {
+  width: 84px !important;
+  min-width: 84px !important;
+  max-width: 84px !important;
+  height: 36px;
+  min-height: 36px;
+  flex: 0 0 84px !important;
+}
+
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-time-trigger {
+  width: 84px !important;
+  min-width: 84px !important;
+  max-width: 84px !important;
+  flex-basis: 84px !important;
+}
+

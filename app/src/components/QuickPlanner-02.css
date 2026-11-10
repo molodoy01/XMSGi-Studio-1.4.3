@@ -1,0 +1,804 @@
+
+
+.quick-planner-emoji-recent {
+  display: flex;
+  min-height: 52px;
+  max-height: 68px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  padding-top: 2px;
+  border-top: 1px solid rgba(154, 168, 184, 0.12);
+}
+
+.quick-planner-emoji-recent-heading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.quick-planner-emoji-recent-heading > span {
+  color: var(--planner-dim);
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 10px;
+}
+
+.quick-planner-emoji-recent-empty {
+  display: flex;
+  min-height: 37px;
+  align-items: center;
+  color: var(--planner-dim);
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 10px;
+}
+
+.quick-planner-emoji-categories {
+  display: grid;
+  flex: 0 0 26px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.quick-planner-emoji-categories button {
+  min-width: 0;
+  min-height: 26px;
+  padding: 0 2px;
+  overflow: hidden;
+  color: var(--planner-dim);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick-planner-emoji-categories button[aria-selected="true"],
+.quick-planner-emoji-categories button:hover,
+.quick-planner-emoji-categories button:focus-visible {
+  color: var(--planner-accent);
+  border-color: rgba(var(--planner-accent-rgb), 0.24);
+  background: rgba(var(--planner-accent-rgb), 0.08);
+  outline: none;
+}
+
+.quick-planner-emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.quick-planner-emoji-results {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.quick-planner-emoji-results > .quick-planner-emoji-grid {
+  height: 100%;
+  align-content: start;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.quick-planner-emoji-results > .quick-planner-emoji-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-planner-emoji-grid button {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0;
+  color: var(--planner-ink);
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 21px;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.quick-planner-emoji-grid button:hover,
+.quick-planner-emoji-grid button:focus-visible,
+.quick-planner-emoji-grid button.is-keyboard-active {
+  background: rgba(var(--planner-accent-rgb), 0.1);
+  outline: none;
+}
+
+.quick-planner-emoji-grid button:active {
+  transform: scale(0.92);
+}
+
+.quick-planner-emoji-empty {
+  display: grid;
+  min-height: 100%;
+  flex: 1 1 auto;
+  place-items: center;
+  margin: 0;
+  padding: 6px;
+  color: var(--planner-dim);
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 11px;
+  text-align: center;
+}
+
+.quick-planner-effects-picker {
+  display: grid;
+  width: min(176px, calc(100vw - 32px));
+  gap: 4px;
+}
+
+.quick-planner-effects-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 2px 6px;
+  border-bottom: 1px solid rgba(154, 168, 184, 0.14);
+  color: var(--planner-ink);
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.quick-planner-effects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.quick-planner-effect-option {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  align-content: center;
+  justify-items: center;
+  gap: 2px;
+  padding: 4px 2px;
+  color: var(--planner-muted);
+  border: 1px solid rgba(154, 168, 184, 0.14);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  font-family: "Exo 2", Arial, sans-serif;
+  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease, transform 140ms ease;
+}
+
+.quick-planner-effect-icon {
+  display: grid;
+  min-height: 18px;
+  place-items: center;
+  color: var(--planner-ink);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.quick-planner-effect-label {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick-planner-effect-option:hover,
+.quick-planner-effect-option:focus-visible,
+.quick-planner-effect-option.is-selected {
+  color: var(--planner-accent);
+  border-color: rgba(var(--planner-accent-rgb), 0.46);
+  background: rgba(var(--planner-accent-rgb), 0.1);
+  outline: none;
+}
+
+.quick-planner-effect-option.is-selected .quick-planner-effect-icon {
+  color: var(--planner-accent);
+}
+
+.quick-planner-effects-picker .quick-planner-effect-option {
+  height: auto;
+  min-height: 36px;
+  padding: 4px 2px;
+}
+
+.quick-planner-effects-picker .quick-planner-effect-option:hover,
+.quick-planner-effects-picker .quick-planner-effect-option:focus-visible,
+.quick-planner-effects-picker .quick-planner-effect-option.is-selected {
+  box-shadow: none;
+  text-shadow: none;
+  filter: none;
+}
+
+.quick-planner-effect-option:active {
+  transform: translateY(1px);
+}
+
+.quick-planner-effects-picker button {
+  width: 100%;
+}
+
+.quick-planner-file-input {
+  display: none;
+}
+
+.quick-planner-compose-footer .quick-planner-action-feedback {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  display: flex;
+  width: max-content;
+  max-width: min(100%, 800px);
+  flex: 0 1 auto;
+  min-width: 0;
+  min-height: 18px;
+  max-height: 48px;
+  margin: 0 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  padding: 0 7px;
+  overflow: hidden;
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  text-align: right;
+  animation: planner-notification-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.quick-planner-schedule-row {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  padding: 0 26px;
+  border-top: 1px solid rgba(48, 64, 75, 0.14);
+  border-bottom: 1px solid var(--planner-line);
+  --quick-planner-schedule-background: linear-gradient(180deg, rgba(247, 250, 252, 0.7), rgba(238, 244, 247, 0.72));
+  --quick-planner-schedule-border-top: rgba(48, 64, 75, 0.14);
+  --quick-planner-schedule-border-bottom: var(--planner-line);
+  background: linear-gradient(180deg, rgba(247, 250, 252, 0.7), rgba(238, 244, 247, 0.72));
+  backdrop-filter: blur(8px) saturate(115%);
+  -webkit-backdrop-filter: blur(8px) saturate(115%);
+}
+
+.quick-planner-schedule-row > .quick-planner-label {
+  width: 84px;
+  flex: 0 0 84px;
+}
+
+.quick-planner-schedule-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.quick-planner-schedule-row button {
+  display: inline-flex;
+  height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  color: #3c4852;
+  border: 1px solid var(--planner-line);
+  border-radius: 6px;
+  background: #ffffff;
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.quick-planner-schedule-row button:hover,
+.quick-planner-schedule-row button:focus-visible {
+  border-color: rgba(var(--planner-accent-rgb), 0.36);
+  background: rgba(var(--planner-accent-rgb), 0.04);
+}
+
+.quick-planner-schedule-row button:focus-visible {
+  outline: 2px solid rgba(var(--planner-accent-rgb), 0.58);
+  outline-offset: 2px;
+}
+
+.quick-planner-schedule-row button:active:not(:disabled):not(.is-readonly) {
+  transform: translateY(1px);
+}
+
+.quick-planner-schedule-row button.is-readonly,
+.quick-planner-schedule-row button.is-readonly:hover,
+.quick-planner-schedule-row button.is-readonly:focus-visible {
+  cursor: default;
+  border-color: var(--planner-line);
+  background: #ffffff;
+}
+
+.quick-planner-schedule-field {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field {
+  width: 144px;
+  flex: 0 0 144px;
+}
+
+.quick-planner-time-value > .quick-planner-schedule-field {
+  width: 124px;
+  flex: 0 0 124px;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field > button,
+.quick-planner-time-value > .quick-planner-schedule-field > button {
+  box-sizing: border-box;
+  height: 44px;
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field > button {
+  box-sizing: border-box;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field > button > span,
+.quick-planner-time-value > .quick-planner-schedule-field > button > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field > button > span {
+  flex: 0 1 auto;
+  text-align: left;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field > button > svg:last-child,
+.quick-planner-time-value > .quick-planner-schedule-field > button > svg:last-child {
+  margin-left: 0;
+}
+
+.quick-planner-schedule-row .quick-planner-schedule-field > button.is-readonly > svg:last-child {
+  visibility: hidden;
+}
+
+.quick-planner-schedule-popover {
+  position: fixed;
+  top: 8px;
+  left: 0;
+  z-index: 80;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid rgba(var(--planner-accent-rgb), 0.22);
+  border-radius: 7px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(34, 47, 58, 0.14);
+}
+
+.quick-planner-date-picker,
+.quick-planner-time-picker {
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.quick-planner-date-picker {
+  width: 246px;
+  max-height: min(276px, calc(100vh - 32px));
+  overflow-y: auto;
+}
+
+.quick-planner-time-picker {
+  width: 172px;
+  max-height: min(276px, calc(100vh - 32px));
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "times"
+    "entry";
+  overflow: hidden;
+}
+
+.quick-planner-date-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.quick-planner-date-picker-header > span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.quick-planner-date-picker-header button {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+  padding: 0;
+  color: #5f6d77;
+  border-color: transparent;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.quick-planner-date-picker-header button:hover:not(:disabled),
+.quick-planner-date-picker-header button:focus-visible:not(:disabled) {
+  color: var(--planner-accent);
+  border-color: rgba(var(--planner-accent-rgb), 0.5);
+  background: rgba(var(--planner-accent-rgb), 0.08);
+}
+
+.quick-planner-date-picker-header button:focus-visible:not(:disabled) {
+  outline: 2px solid rgba(var(--planner-accent-rgb), 0.58);
+  outline-offset: 1px;
+}
+
+.quick-planner-date-picker-header button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.quick-planner-date-picker-weekdays,
+.quick-planner-date-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.quick-planner-date-picker-weekdays span {
+  color: #697680;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.quick-planner-date-picker-grid button,
+.quick-planner-date-picker-gap {
+  height: 26px;
+}
+
+.quick-planner-date-picker-grid button {
+  padding: 0;
+  color: #3c4852;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease, background-color 140ms ease;
+}
+
+.quick-planner-date-picker-grid button:hover:not(:disabled),
+.quick-planner-date-picker-grid button:focus-visible:not(:disabled) {
+  color: #26333d;
+  border-color: rgba(var(--planner-accent-rgb), 0.5);
+  background: rgba(var(--planner-accent-rgb), 0.1);
+  outline: none;
+}
+
+.quick-planner-date-picker-grid button:focus-visible:not(:disabled) {
+  outline: 2px solid rgba(var(--planner-accent-rgb), 0.58);
+  outline-offset: 1px;
+}
+
+.quick-planner-date-picker-grid button.is-today {
+  border-color: rgba(var(--planner-accent-rgb), 0.4);
+}
+
+.quick-planner-date-picker-grid button.is-selected,
+.quick-planner-date-picker-grid button.is-selected:hover {
+  color: #ffffff;
+  border-color: var(--planner-accent);
+  background: var(--planner-accent);
+}
+
+.quick-planner-date-picker-grid button:disabled {
+  color: #a2abb3;
+  cursor: default;
+}
+
+.quick-planner-time-field {
+  grid-area: entry;
+  width: 100%;
+  height: 28px;
+  padding: 0 8px;
+  color: var(--planner-ink);
+  border: 1px solid rgba(154, 168, 184, 0.24);
+  border-radius: 6px;
+  background: #f7f8fa;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.quick-planner-time-field:focus {
+  border-color: rgba(var(--planner-accent-rgb), 0.55);
+  outline: none;
+}
+
+.quick-planner-time-list {
+  grid-area: times;
+  display: grid;
+  min-height: 0;
+  gap: 1px;
+  overflow-y: auto;
+  scrollbar-color: rgba(154, 168, 184, 0.3) transparent;
+  scrollbar-width: thin;
+}
+
+.quick-planner-time-list button {
+  height: 24px;
+  padding: 0 8px;
+  color: #3c4852;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  cursor: pointer;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.quick-planner-time-list button:hover:not(:disabled),
+.quick-planner-time-list button:focus-visible:not(:disabled) {
+  color: #ffffff;
+  background: var(--planner-accent);
+  outline: none;
+}
+
+.quick-planner-time-list button:focus-visible:not(:disabled) {
+  outline: 2px solid rgba(var(--planner-accent-rgb), 0.58);
+  outline-offset: 1px;
+}
+
+.quick-planner-time-list button[aria-selected="true"] {
+  color: #ffffff;
+  background: var(--planner-accent);
+  font-weight: 700;
+}
+
+.quick-planner-time-list button:disabled {
+  color: #a2abb3;
+  cursor: default;
+}
+
+.quick-planner-schedule-popover input {
+  min-width: 150px;
+  height: 34px;
+  padding: 0 8px;
+  color: var(--planner-ink);
+  color-scheme: light;
+  border: 1px solid var(--planner-line);
+  border-radius: 5px;
+  background: #f7f8fa;
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.quick-planner-schedule-popover input:focus-visible {
+  border-color: rgba(var(--planner-accent-rgb), 0.48);
+  outline: none;
+}
+
+.quick-planner-schedule-row button svg:first-child {
+  color: var(--planner-accent);
+}
+
+.quick-planner-schedule-row button svg:last-child {
+  color: var(--planner-dim);
+}
+
+.quick-planner-time-value {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.quick-planner-submit-group {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.quick-planner-submit-group > .quick-planner-timezone {
+  width: auto;
+  flex: 0 0 auto;
+  border-left: 0;
+  border-right: 1px solid var(--planner-line);
+}
+
+.quick-planner-submit-group > .quick-planner-submit {
+  margin-left: 0;
+}
+
+.quick-planner-schedule-row > .quick-planner-schedule-field > button {
+  font-variant-numeric: tabular-nums;
+}
+
+.quick-planner :is(.quick-planner-schedule-popover, .quick-planner-date-picker, .quick-planner-time-picker, .quick-planner-emoji-picker) {
+  color: var(--planner-ink);
+  border-color: var(--planner-line);
+  background-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(34, 47, 58, 0.14);
+}
+
+.quick-planner :is(.quick-planner-chat-menu, .quick-planner-schedule-popover, .quick-planner-date-picker, .quick-planner-time-picker) :is(input, button, [role='option']) {
+  color-scheme: light;
+}
+
+.quick-planner :is(.quick-planner-chat-menu, .quick-planner-schedule-popover, .quick-planner-date-picker, .quick-planner-time-picker) input {
+  color: var(--planner-ink);
+  border-color: var(--planner-line);
+  background: #f7f8fa;
+}
+
+.quick-planner-timezone {
+  display: inline-flex;
+  width: 68px;
+  height: 24px;
+  flex: 0 0 68px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  color: var(--planner-dim);
+  border-left: 1px solid var(--planner-line);
+  border-right: 1px solid var(--planner-line);
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.quick-planner-timezone.is-no-presets {
+  border-right: 1px solid var(--planner-line);
+}
+
+.quick-planner-schedule-row .quick-planner-submit {
+  width: 160px;
+  min-width: 160px;
+  flex: 0 0 160px;
+  height: 44px;
+  margin-left: auto;
+  color: #ffffff;
+  border-color: var(--planner-accent);
+  background: var(--planner-accent);
+  font-family: "Exo 2", Arial, sans-serif;
+  font-size: 12px;
+}
+
+@media (min-width: 1200px) {
+  .quick-planner-schedule-row {
+    flex-wrap: wrap;
+    gap: 3.5px;
+    padding-left: 21px;
+  }
+
+  .quick-planner-schedule-row > .quick-planner-label {
+    width: max-content;
+    flex: 0 0 auto;
+  }
+
+}
+
+.quick-planner-schedule-row .quick-planner-submit svg:first-child {
+  flex: 0 0 16px;
+  color: #ffffff;
+}
+
+.quick-planner-schedule-row .quick-planner-open-studio {
+  height: 44px;
+  min-width: 148px;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  color: var(--planner-ink);
+  border-color: var(--planner-line);
+  background: #ffffff;
+  font-size: 12px;
+}
+
+.quick-planner-draft-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.quick-planner-draft-actions .quick-planner-submit {
+  margin-left: 0;
+}
+
+.quick-planner-schedule-row .quick-planner-open-studio:hover,
+.quick-planner-schedule-row .quick-planner-open-studio:focus-visible {
+  border-color: rgba(var(--planner-accent-rgb), 0.42);
+  background: rgba(var(--planner-accent-rgb), 0.05);
+  outline: none;
+}
+
+.quick-planner-compose-footer {
+  display: flex;
+  box-sizing: border-box;
+  flex: 0 0 48px;
+  min-height: 48px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 16px 16px;
+}
+
+@media (min-width: 1200px) {
+  .quick-planner-composer {
+    min-height: calc(260px - 20px);
+  }
+
+  .quick-planner-compose-footer {
+    flex-basis: 68px;
+    min-height: calc(48px + 20px);
+  }
+}
+
+html.electron-runtime:has(.product-view.is-active .quick-planner) .quick-planner {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 0;
+}
+
+html.electron-runtime:has(.product-view.is-active .quick-planner) .quick-planner-inner {
+  height: 100%;
+  min-height: 0;
+}
+
+html.electron-runtime:has(.product-view.is-active .quick-planner) .quick-planner-workbench {
+  min-height: 510px;
+}
+
+html.electron-runtime:has(.product-view.is-active .quick-planner) .quick-planner-layout {
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+html.electron-runtime:has(.product-view.is-active .quick-planner) .quick-planner-composer {
+  min-height: 0;
+  flex: 1 1 0;
+}

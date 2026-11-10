@@ -1,0 +1,143 @@
+.workspace-page-version-history-dialog {
+  border-color: #dce4e8;
+  background: linear-gradient(160deg, #ffffff, #f7f8fa 72%);
+  box-shadow: 0 24px 68px rgba(34, 47, 58, 0.2);
+  color: #29343d;
+}
+
+.workspace-page-version-history-header {
+  border-bottom-color: #e4e9ec;
+  background: linear-gradient(180deg, #ffffff, #fbfcfd);
+}
+
+.workspace-page-version-history-icon {
+  border-color: rgba(71, 124, 158, 0.22);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.workspace-page-version-history-header h2 {
+  color: #29343d;
+}
+
+.workspace-page-version-history-header p,
+.workspace-page-version-history-picker-label,
+.workspace-page-version-history-document-copy small,
+.workspace-page-version-history-document-option small,
+.workspace-page-version-history-item time,
+.workspace-page-version-history-preview time,
+.workspace-page-version-history-metadata dt,
+.workspace-page-version-history-attachments h3,
+.workspace-page-version-history-empty {
+  color: #68747e;
+}
+
+.workspace-page-version-history-close,
+.workspace-page-version-history-cancel,
+.workspace-page-version-history-copy {
+  border-color: #dce4e8;
+  background: #f0f2f4;
+  color: #43515b;
+}
+
+.workspace-page-version-history-close:hover,
+.workspace-page-version-history-cancel:hover,
+.workspace-page-version-history-copy:hover:not(:disabled) {
+  border-color: #c9d7df;
+  background: #eaf0f3;
+  color: #29343d;
+}
+
+.workspace-page-version-history-list,
+.workspace-page-version-history-footer {
+  border-color: #e4e9ec;
+  background: #f6f8f9;
+}
+
+.workspace-page-version-history-preview {
+  background: #ffffff;
+}
+
+.workspace-page-version-history-document-picker {
+  border-bottom-color: #e4e9ec;
+}
+
+.workspace-page-version-history-document-trigger {
+  border-color: #dce4e8;
+  background: #ffffff;
+  color: #35434d;
+}
+
+.workspace-page-version-history-document-trigger:hover,
+.workspace-page-version-history-document-trigger:focus-visible,
+.workspace-page-version-history-document-trigger[aria-expanded='true'] {
+  border-color: rgba(71, 124, 158, 0.42);
+  background: #f7fafb;
+}
+
+.workspace-page-version-history-document-trigger > svg {
+  color: #68747e;
+}
+
+.workspace-page-version-history-document-menu {
+  border-color: #dce4e8;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(34, 47, 58, 0.12);
+}
+
+.workspace-page-version-history-document-option {
+  color: #35434d;
+}
+
+.workspace-page-version-history-document-option:hover,
+.workspace-page-version-history-document-option:focus-visible,
+.workspace-page-version-history-document-option.is-selected,
+.workspace-page-version-history-item:hover,
+.workspace-page-version-history-item.is-selected {
+  border-color: #dce4e8;
+  background: #edf2f5;
+}
+
+.workspace-page-version-history-preview pre {
+  color: #29343d;
+}
+
+.workspace-page-version-history-attachments {
+  border-top-color: #e4e9ec;
+}
+
+.workspace-page-version-history-list,
+.workspace-page-version-history-preview,
+.workspace-page-version-history-document-menu {
+  scrollbar-width: thin;
+  scrollbar-color: #687680 #e3e8eb;
+}
+
+.workspace-page-version-history-list::-webkit-scrollbar,
+.workspace-page-version-history-preview::-webkit-scrollbar,
+.workspace-page-version-history-document-menu::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.workspace-page-version-history-list::-webkit-scrollbar-track,
+.workspace-page-version-history-preview::-webkit-scrollbar-track,
+.workspace-page-version-history-document-menu::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #d5dde1;
+}
+
+.workspace-page-version-history-list::-webkit-scrollbar-thumb,
+.workspace-page-version-history-preview::-webkit-scrollbar-thumb,
+.workspace-page-version-history-document-menu::-webkit-scrollbar-thumb {
+  border: 2px solid #d5dde1;
+  border-radius: 999px;
+  background: #596771;
+}
+
+.workspace-page-version-history-list::-webkit-scrollbar-thumb:hover,
+.workspace-page-version-history-preview::-webkit-scrollbar-thumb:hover,
+.workspace-page-version-history-document-menu::-webkit-scrollbar-thumb:hover {
+  background: #45535d;
+}
+

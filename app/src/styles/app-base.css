@@ -1,0 +1,172 @@
+@import './tokens.css';
+@import './settings.css';
+@import './history.css';
+
+.quick-planner-connection-spinner,
+.workspace-page-connection-spinner {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  border: 1.5px solid currentColor;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: connection-status-spin 800ms linear infinite;
+}
+
+@keyframes connection-status-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.history-empty-art-icon .history-loading-spinner {
+  display: block;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  overflow: visible;
+  color: currentColor;
+}
+
+.history-loading-spinner-track,
+.history-loading-spinner-arc {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.history-loading-spinner-track {
+  opacity: 0.2;
+}
+
+.history-loading-spinner-arc {
+  stroke-dasharray: 29 50.3;
+  transform-box: view-box;
+  transform-origin: 45.8333% 45.8333%;
+  animation: history-search-spinner-spin 850ms linear infinite;
+}
+
+@keyframes history-search-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quick-planner-connection-spinner,
+  .workspace-page-connection-spinner,
+  .history-loading-spinner-arc {
+    animation-duration: 2s;
+  }
+}
+
+@keyframes history-source-menu-drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes planner-notification-retrigger {
+  0%, 100% {
+    translate: 0 0;
+  }
+
+  35% {
+    translate: 0 -3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quick-planner-compose-footer .quick-planner-action-feedback.is-retriggered,
+  .workspace-page-publish-transient-feedback.is-retriggered {
+    animation: none;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--void);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(154, 168, 184, 0.35) transparent;
+  scrollbar-gutter: auto;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--void);
+  color: var(--text);
+  font-size: 14px;
+  min-height: 100vh;
+  line-height: 1.4;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(154, 168, 184, 0.35) transparent;
+}
+
+html:has(.auth-panel),
+body:has(.auth-panel) {
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(154, 168, 184, 0.35) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(154, 168, 184, 0.32);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 168, 184, 0.5);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ── APP CONTAINER ── */
+
+.app {
+  min-height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app:has(.auth-panel) {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0;
+}

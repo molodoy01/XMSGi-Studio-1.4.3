@@ -1,0 +1,51 @@
+/* Chat removal confirmation dialog. */
+.chat-remove-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  width: min(390px, calc(100vw - 40px));
+  padding: 20px;
+  background: rgba(17, 19, 22, 0.99);
+  color: var(--text);
+  border: 1px solid rgba(154, 168, 184, 0.24);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.44);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  font-family: var(--sans);
+}
+
+.chat-remove-modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.chat-remove-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.chat-remove-message { font-size: 13px; line-height: 1.5; margin-bottom: 18px; color: var(--dim); }
+
+.chat-remove-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.chat-remove-actions button {
+  border: 0;
+  border-radius: 0;
+  padding: 4px 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chat-remove-cancel { color: var(--dim); }
+.chat-remove-confirm { color: var(--danger); }
+.chat-remove-actions button:hover { color: var(--text); }
+.chat-remove-confirm:hover { color: var(--danger); }

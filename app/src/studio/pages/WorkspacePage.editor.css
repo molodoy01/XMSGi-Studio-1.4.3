@@ -1,0 +1,178 @@
+.workspace-page-editor-canvas {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 290px;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  padding: 6px 0 0;
+}
+
+.workspace-page-editor-canvas:focus-within {
+  border-color: transparent;
+  background: transparent;
+}
+
+.workspace-page-rich-text-input {
+  background: transparent;
+  box-shadow: none;
+  caret-color: transparent;
+  border-radius: 0;
+  transition: background-size 520ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.workspace-page-rich-text-input::selection,
+.workspace-page-rich-text-input *::selection,
+.workspace-page-rich-text-input::-moz-selection,
+.workspace-page-rich-text-input *::-moz-selection {
+  background: rgba(154, 168, 184, 0.14);
+}
+
+.workspace-page-rich-text-input:focus,
+.workspace-page-rich-text-input:focus-visible {
+  background: transparent;
+  box-shadow: none;
+  caret-color: var(--signal);
+}
+
+.workspace-page-rich-text-input:focus::after,
+.workspace-page-rich-text-input:focus-visible::after {
+  content: none;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  pointer-events: none;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+}
+
+.workspace-page-rich-text-input.is-logo-intro:focus,
+.workspace-page-rich-text-input.is-logo-intro:focus-visible,
+.workspace-page-rich-text-input.is-logo-intro:focus::after,
+.workspace-page-rich-text-input.is-logo-intro:focus-visible::after {
+  box-shadow: none;
+  opacity: 1;
+}
+
+.workspace-page-rich-text-input.is-logo-intro {
+  z-index: 1;
+}
+
+.workspace-page-rich-text-input.is-logo-intro-finishing:focus::after,
+.workspace-page-rich-text-input.is-logo-intro-finishing:focus-visible::after {
+  opacity: 0.42;
+  transition: opacity 180ms linear;
+}
+
+.workspace-page-editor-canvas:has(.chat-picker.is-open) .workspace-page-rich-text-input {
+  background: color-mix(in srgb, var(--void) 95%, white 5%);
+}
+
+.workspace-page-rich-text-schedule-stage.is-active,
+.workspace-page-rich-text-template-stage.is-active,
+.workspace-page-rich-text-chat-stage.is-active,
+.workspace-page-rich-text-buttons-stage.is-active {
+  background: color-mix(in srgb, var(--void) 95%, white 5%);
+  transition: background-color 180ms ease;
+}
+
+.workspace-page-form-row {
+  padding: 0 18px;
+}
+
+.workspace-page-form-row:first-child {
+  padding-top: 24px;
+}
+
+.workspace-page-form-row-title {
+  padding-top: 18px;
+  padding-bottom: 2px;
+}
+
+.workspace-page-form-row-body {
+  flex: 1;
+  min-height: 220px;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 14px;
+}
+
+.workspace-page-field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.workspace-page-channel-picker {
+  width: 100%;
+}
+
+.workspace-page-channel-picker .chat-picker-current {
+  min-height: 30px;
+  padding: 8px 28px 8px 12px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.workspace-page-input,
+.workspace-page-textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  box-shadow: none;
+}
+
+.workspace-page-input {
+  min-height: 42px;
+  padding: 10px 0;
+}
+
+.workspace-page-input::placeholder,
+.workspace-page-textarea::placeholder {
+  color: var(--dim);
+}
+
+.workspace-page-textarea {
+  flex: 1 1 auto;
+  min-height: 220px;
+  max-height: none;
+  resize: none;
+  line-height: 1.6;
+  padding: 16px 18px;
+  border: 1px solid var(--faint);
+  background: var(--void);
+  font-size: 16px;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  caret-color: var(--signal);
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  transition: border-color 160ms ease;
+}
+
+.workspace-page-textarea:focus,
+.workspace-page-textarea:focus-visible,
+.workspace-page-input:focus {
+  outline: none;
+  border-color: var(--signal);
+  box-shadow: none;
+}
+

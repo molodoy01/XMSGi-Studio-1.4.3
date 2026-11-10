@@ -1,0 +1,29 @@
+# Dependencies and generated output
+**/node_modules/
+**/dist/
+**/build/
+**/release/
+**/release-working-*/
+**/.vite/
+**/.vitest/
+**/coverage/
+*.tsbuildinfo
+!/app/build/
+!/app/build/icon.ico
+
+# Local configuration and application data
+**/.env
+**/.env.*
+!**/.env.example
+**/electron-user-data/
+**/app-data/
+**/.playwright-mcp/
+
+# Editor, operating system, and temporary files
+**/.cache/
+**/.idea/
+**/.vscode/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

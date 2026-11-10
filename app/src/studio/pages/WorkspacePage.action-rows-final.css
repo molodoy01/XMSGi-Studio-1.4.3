@@ -1,0 +1,679 @@
+
+
+.workspace-page-attachment-button:focus-visible,
+.workspace-page-attachment-remove:focus-visible,
+.workspace-page-send-button:focus-visible,
+.workspace-page-schedule-button:focus-visible,
+.workspace-page-schedule-menu-trigger:focus-visible,
+.workspace-page-schedule-preset:focus-visible,
+.workspace-page-schedule-apply:focus-visible,
+.workspace-page-schedule-cancel:focus-visible,
+.workspace-page-preview-collapse:focus-visible,
+.workspace-page-preview-error button:focus-visible,
+.workspace-page-back-link:focus-visible {
+  outline: 2px solid rgba(154, 168, 184, 0.62);
+  outline-offset: 2px;
+}
+
+/* Keep the schedule trigger in the same visual family as Templates. */
+.workspace-page-schedule-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  position: relative;
+  width: auto !important;
+  min-width: 82px !important;
+  max-width: none !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 10px;
+  border: 2px solid rgba(225, 238, 246, 0.48);
+  border-radius: 10px;
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.11), rgba(170, 195, 210, 0.025) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.72);
+  color: #f4f8fb;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.workspace-page-schedule-menu-trigger::before {
+  display: none;
+}
+
+.workspace-page-schedule-menu-trigger::after {
+  display: none;
+}
+
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button,
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap,
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger {
+  flex: 0 1 auto;
+  width: auto;
+  min-width: 82px;
+}
+
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger {
+  height: 38px !important;
+  min-height: 38px !important;
+  justify-content: center;
+  padding: 0 10px !important;
+}
+
+.workspace-page-schedule-row {
+  gap: 8px !important;
+}
+
+.workspace-page-schedule-row > .workspace-page-action-left-group {
+  gap: 8px !important;
+}
+
+.workspace-page-action-row.workspace-page-schedule-row {
+  background: transparent;
+  box-shadow: inset 0 1px rgba(154, 168, 184, 0.1);
+}
+
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle {
+  --glow-strength: 0;
+  --beam-spread: 0.35;
+  --rim-angle: 0deg;
+  --rim-opacity: 0;
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  display: grid;
+  flex: 0 0 38px;
+  place-items: center;
+  box-sizing: border-box;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  min-height: 38px;
+  padding: 0;
+  border: 2px solid rgba(225, 238, 246, 0.48);
+  border-color: rgba(225, 238, 246, 0.48) !important;
+  border-radius: 10px;
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.11), rgba(170, 195, 210, 0.025) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.72) !important;
+  outline: 1px solid transparent;
+  outline-offset: 1px;
+  box-shadow: none;
+  color: #f4f8fb;
+  transform: none;
+  cursor: pointer;
+  transition: none;
+}
+
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle::after,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle::after {
+  position: absolute;
+  z-index: 2;
+  inset: -3px;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 2px;
+  background: conic-gradient(
+    from calc(var(--rim-angle, 0deg) - 27deg),
+    transparent 0deg 8deg,
+    rgba(169, 220, 255, calc(0.24 + var(--glow-strength) * 0.92)) 18deg,
+    rgba(238, 250, 255, calc(0.52 + var(--glow-strength) * 0.8)) 28deg,
+    rgba(188, 231, 250, calc(0.24 + var(--glow-strength) * 0.9)) 42deg,
+    transparent 58deg 360deg
+  );
+  content: '';
+  opacity: var(--rim-opacity, 0);
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  filter:
+    blur(calc(0.6px + var(--beam-spread) * 2px))
+    drop-shadow(0 0 calc(5px + var(--glow-strength) * 12px) rgba(211, 242, 255, 0.9));
+  transform: scale(calc(1 + var(--glow-strength) * 0.12));
+  transform-origin: center;
+  transition: opacity 320ms linear, filter 140ms ease, transform 140ms ease;
+}
+
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:hover::after,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:hover::after,
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:focus-visible::after,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:focus-visible::after {
+  --rim-opacity: 0.45;
+}
+
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle svg,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 -1px 0 rgba(245, 252, 255, 0.24)) drop-shadow(0 1px 0 rgba(4, 8, 12, 0.72)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.38));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle::after,
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle::after {
+    transition: none;
+  }
+}
+
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button,
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger,
+.workspace-page-submit-actions .workspace-page-publish-trigger,
+.workspace-page-submit-actions .workspace-page-publish-main {
+  border-color: rgba(225, 238, 246, 0.48);
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.11), rgba(170, 195, 210, 0.025) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.72) !important;
+  box-shadow: none;
+}
+
+.workspace-page-action-left-group .workspace-page-mode-button:hover,
+.workspace-page-action-left-group .workspace-page-mode-button:focus-visible,
+.workspace-page-action-left-group .workspace-page-mode-button.is-active,
+.workspace-page-action-left-group .workspace-page-mode-button-history:hover,
+.workspace-page-action-left-group .workspace-page-mode-button-history:focus-visible,
+.workspace-page-action-left-group .workspace-page-mode-button-history.is-active,
+.workspace-page-mode-button:hover,
+.workspace-page-mode-button:focus-visible,
+.workspace-page-mode-button.is-active,
+.workspace-page-mode-button-history:hover,
+.workspace-page-mode-button-history:focus-visible,
+.workspace-page-mode-button-history.is-active,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button:hover,
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger:hover,
+.workspace-page-submit-actions .workspace-page-publish-trigger:hover:not(:disabled),
+.workspace-page-submit-actions .workspace-page-publish-main:hover:not(:disabled) {
+  border-color: rgba(225, 238, 246, 0.62) !important;
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.08), rgba(170, 195, 210, 0.02) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.74) !important;
+  box-shadow: 0 0 0 1px rgba(225, 238, 246, 0.18) !important;
+}
+
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button.is-active,
+.workspace-page-submit-actions .workspace-page-publish-trigger[aria-expanded='true'],
+.workspace-page-submit-actions .workspace-page-publish-main.is-active {
+  border-color: rgba(225, 238, 246, 0.72);
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.14), rgba(170, 195, 210, 0.04) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.8) !important;
+  box-shadow: 0 0 0 1px rgba(225, 238, 246, 0.28);
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main {
+  flex: 0 0 90px !important;
+  width: 90px !important;
+  min-width: 90px !important;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle {
+  flex: 0 0 30px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+}
+
+
+.workspace-page-draft-meta {
+  margin-left: 0;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.workspace-page-draft-footer .workspace-page-schedule-summary.has-draft-color-picker {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.workspace-page-draft-footer .workspace-page-publish-footer-content {
+  margin-left: auto;
+  text-align: right;
+}
+
+@media (min-width: 761px) {
+  .workspace-page-draft-footer {
+    height: 62px;
+    min-height: 62px;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  }
+
+  .workspace-page-draft-footer .workspace-page-draft-meta {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 0;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .workspace-page-draft-footer .workspace-page-schedule-summary.has-draft-color-picker {
+    flex: 0 0 auto;
+    width: auto;
+    margin-left: auto;
+  }
+}
+
+.workspace-page-draft-footer.has-mass-warning .workspace-page-draft-meta,
+.workspace-page-draft-footer.has-mass-warning .workspace-page-schedule-summary {
+  visibility: hidden;
+}
+  .workspace-page-draft-footer {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px 12px;
+  }
+
+  .workspace-page-draft-meta {
+    flex: 1 1 100%;
+    min-width: 0;
+    padding: 0;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .workspace-page-draft-footer .workspace-page-schedule-summary {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .workspace-page-publish-menu {
+    max-width: calc(100vw - 32px);
+  }
+
+.workspace-page-submit-actions {
+  gap: 6px;
+  .topbar {
+    justify-content: space-between;
+  }
+
+  .settings-action.product-mode-switch {
+    position: static;
+    left: auto;
+    flex: 0 0 auto;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .topbar-actions {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    min-width: 0;
+    gap: 0;
+    margin-left: 4px;
+  }
+
+  .topbar-actions .settings-action,
+  .topbar-actions .account-action {
+    min-width: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main {
+  flex: 0 0 112px !important;
+  width: 112px !important;
+  min-width: 112px !important;
+  border-radius: 7px !important;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle {
+  flex: 0 0 38px !important;
+  width: 38px !important;
+  min-width: 38px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  border: 2px solid rgba(225, 238, 246, 0.48) !important;
+  border-radius: 10px !important;
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.11), rgba(170, 195, 210, 0.025) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.72) !important;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle::after {
+  border-radius: 13px;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle:hover:not(:disabled),
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle:focus-visible,
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle[aria-expanded='true'] {
+  background: rgba(23, 27, 31, 0.72) !important;
+  border-color: rgba(225, 238, 246, 0.72) !important;
+  box-shadow: 0 0 0 1px rgba(225, 238, 246, 0.32);
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main {
+  --glow-strength: 0;
+  --beam-spread: 0.35;
+  --rim-angle: 0deg;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  height: 38px;
+  min-height: 38px;
+  box-sizing: border-box;
+  border: 2px solid rgba(225, 238, 246, 0.48) !important;
+  border-radius: 10px !important;
+  background:
+    linear-gradient(145deg, rgba(220, 236, 246, 0.11), rgba(170, 195, 210, 0.025) 52%, transparent 76%),
+    rgba(23, 27, 31, 0.72) !important;
+  color: #f4f8fb;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main::after {
+  content: none;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main:hover::after,
+.workspace-page-submit-actions .workspace-page-publish-main:focus-visible::after {
+  content: none;
+  opacity: 0;
+  animation: none;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main:hover:not(:disabled) {
+  background: rgba(23, 27, 31, 0.72) !important;
+  border-color: rgba(225, 238, 246, 0.72) !important;
+  box-shadow: 0 0 0 1px rgba(225, 238, 246, 0.32);
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main:active:not(:disabled) {
+  box-shadow: none;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main.is-active {
+  border-width: 1px !important;
+  box-shadow: none;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main::after {
+  opacity: 0;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main .workspace-page-publish-trigger-main {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes workspace-action-rim-breathe {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:hover::after,
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:focus-visible::after,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:hover::after,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:focus-visible::after,
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle:hover::after,
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle:focus-visible::after,
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle.is-active::after,
+.workspace-page-submit-actions .workspace-page-publish-main:hover::after {
+  animation: workspace-action-rim-breathe 2.4s ease-in-out infinite;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-menu-toggle.is-active:not(:hover):not(:focus-visible)::after {
+  background: conic-gradient(
+    rgba(238, 250, 255, 0.38),
+    rgba(188, 231, 250, 0.24),
+    rgba(238, 250, 255, 0.38)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:hover::after,
+  .workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:focus-visible::after,
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:hover::after,
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:focus-visible::after,
+  .workspace-page-submit-actions .workspace-page-publish-menu-toggle:hover::after,
+  .workspace-page-submit-actions .workspace-page-publish-menu-toggle:focus-visible::after,
+  .workspace-page-submit-actions .workspace-page-publish-menu-toggle.is-active::after,
+  .workspace-page-submit-actions .workspace-page-publish-main:hover::after {
+    animation: none;
+  }
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main:hover::after {
+  opacity: 0.9 !important;
+  animation: workspace-action-rim-breathe 2.4s ease-in-out infinite !important;
+}
+
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:hover,
+.workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle:focus-visible,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:hover,
+.workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle:focus-visible {
+  background: rgba(23, 27, 31, 0.72) !important;
+  border-color: rgba(225, 238, 246, 0.72) !important;
+  box-shadow: 0 0 0 1px rgba(225, 238, 246, 0.32);
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  content: '';
+  background: radial-gradient(
+    circle 44px at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    rgba(225, 246, 255, 0.14),
+    rgba(225, 246, 255, 0.04) 38%,
+    transparent 72%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main:hover::before {
+  opacity: 1;
+}
+
+.workspace-page-schedule-menu-trigger > span {
+  display: block;
+  width: auto;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspace-page-schedule-menu-icon {
+  display: none;
+}
+
+.workspace-page-schedule-menu-trigger:hover,
+.workspace-page-schedule-menu-trigger[aria-expanded='true'],
+.workspace-page-schedule-menu-trigger.is-active,
+.workspace-page-schedule-menu-trigger[aria-pressed='true'],
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger.is-active,
+.workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger[aria-pressed='true'] {
+  border-color: rgba(121, 168, 255, 0.58) !important;
+  background: linear-gradient(180deg, rgba(121, 168, 255, 0.12), rgba(121, 168, 255, 0.04)) !important;
+  color: #f4f8ff !important;
+  box-shadow: inset 0 0 0 1px rgba(121, 168, 255, 0.22), 0 0 0 1px rgba(121, 168, 255, 0.08) !important;
+}
+
+.workspace-page-rich-text-schedule-stage .workspace-page-mode-header {
+  min-height: 22px;
+  padding: 0 0 7px;
+}
+
+.workspace-page-rich-text-schedule-stage .workspace-page-mode-header h2 {
+  margin: 0;
+  grid-column: 1;
+  grid-row: 1;
+  transform: none;
+  color: var(--dim);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.workspace-page-rich-text-schedule-stage .workspace-page-mode-header .workspace-page-schedule-timezone {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  margin: 0;
+  color: rgba(226, 230, 235, 0.58);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
+.workspace-page-send-button:disabled,
+.workspace-page-schedule-button:disabled {
+  filter: saturate(0.55);
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .workspace-page-preview-panel {
+    flex-basis: 360px;
+    width: 360px;
+    max-width: 360px;
+    min-width: 360px;
+  }
+
+  .workspace-page-schedule-row {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) max-content;
+    justify-content: stretch;
+    gap: clamp(6px, calc(0.59vw + 1.5px), 8px);
+    padding-right: clamp(8px, calc(1.77vw - 5.5px), 14px);
+    padding-left: clamp(8px, calc(1.77vw - 5.5px), 14px);
+  }
+
+  .workspace-page-action-left-group {
+    min-width: 0;
+    gap: clamp(5px, calc(0.885vw - 1.7px), 8px);
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group {
+    flex: 0 1 auto;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button {
+    min-width: clamp(68px, calc(7vw + 5px), 82px) !important;
+    padding-right: clamp(6px, calc(0.59vw + 1.5px), 8px) !important;
+    padding-left: clamp(6px, calc(0.59vw + 1.5px), 8px) !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .workspace-page-schedule-compact-group {
+    gap: clamp(4px, calc(0.59vw - 0.5px), 6px);
+  }
+
+  .workspace-page-schedule-popover-wrap {
+    justify-self: end;
+  }
+}
+
+.workspace-page-rich-text-schedule-stage button:not(.workspace-page-stage-secondary):not(.workspace-page-stage-primary):hover,
+.workspace-page-rich-text-buttons-stage button:not(.workspace-page-stage-secondary):not(.workspace-page-stage-primary):hover,
+.workspace-page-rich-text-template-stage button:not(.workspace-page-stage-secondary):not(.workspace-page-stage-primary):hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+.workspace-page-rich-text-schedule-stage button:not(.workspace-page-stage-secondary):not(.workspace-page-stage-primary):focus-visible,
+.workspace-page-rich-text-buttons-stage button:not(.workspace-page-stage-secondary):not(.workspace-page-stage-primary):focus-visible,
+.workspace-page-rich-text-template-stage button:not(.workspace-page-stage-secondary):not(.workspace-page-stage-primary):focus-visible {
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .workspace-page-attachment-card {
+    display: flex;
+    max-width: 100%;
+    min-height: 34px;
+    padding: 2px 26px 2px 4px;
+    border: 1px solid rgba(154, 168, 184, 0.16);
+    border-radius: 6px;
+    background: rgba(17, 19, 22, 0.42);
+  }
+
+  .workspace-page-attachment-name {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .workspace-page-main {
+    flex-direction: row;
+    gap: 12px;
+    padding: 68px 16px 40px;
+  }
+
+  .workspace-page-editor-panel {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .workspace-page-preview-panel {
+    flex: 0 0 360px;
+    width: 360px;
+    max-width: 360px;
+    min-width: 360px;
+    min-height: min(360px, max(0px, calc(100dvh - 172px)));
+  }
+
+  .workspace-page-media-row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'tools tools'
+      'when when'
+      'send publish';
+    align-items: center;
+    row-gap: 8px;
+  }
+
+  .workspace-page-action-left-group {
+    grid-area: tools;
+  }
+
+  .workspace-page-schedule-popover-wrap {
+    grid-area: when;
+  }
+
+  .workspace-page-send-button {
+    grid-area: publish;
+  }
+
+  .workspace-page-schedule-button {
+    grid-area: send;
+  }
+
+  .workspace-page-schedule-controls,
+  .workspace-page-schedule-button {
+    width: 100%;
+  }
+
+}

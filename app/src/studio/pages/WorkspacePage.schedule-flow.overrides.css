@@ -1,0 +1,1157 @@
+.workspace-page-rich-text-schedule-stage button:focus-visible,
+.workspace-page-rich-text-template-stage button:focus-visible,
+.workspace-page-rich-text-buttons-stage button:focus-visible,
+.workspace-page-rich-text-chat-stage button:focus-visible,
+.workspace-page-rich-text-chat-stage [role='option']:focus-visible {
+  outline: 2px solid rgba(111, 155, 124, 0.76);
+  outline-offset: 2px;
+}
+
+@media (max-width: 840px) {
+  .workspace-page-main {
+    height: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 52px 20px 44px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .workspace-page-rich-text-stage {
+    min-height: 0;
+  }
+
+  .workspace-page .workspace-page-editor-panel {
+    width: 100%;
+    height: min(720px, calc(100dvh - 172px));
+    min-width: 0;
+    min-height: 440px;
+    max-height: min(720px, calc(100dvh - 172px));
+    max-width: none;
+    flex: 0 0 auto;
+    align-items: stretch;
+  }
+
+  .workspace-page .workspace-page-preview-panel {
+    width: 100%;
+    height: min(560px, 72vh);
+    min-width: 0;
+    min-height: 380px;
+    max-width: none;
+    max-height: none;
+    flex: 0 0 auto;
+  }
+
+  .workspace-page-preview-panel[data-collapsed='true'] {
+    height: 48px;
+    min-height: 48px;
+  }
+}
+
+.workspace-page-rich-text-stage:has(.workspace-page-rich-text-schedule-stage.is-active) {
+  min-height: 170px;
+}
+
+@media (max-width: 600px) {
+  .workspace-page-main {
+    gap: 20px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .workspace-page .workspace-page-editor-panel {
+    height: min(700px, calc(100dvh - 152px));
+    min-height: 420px;
+    max-height: min(700px, calc(100dvh - 152px));
+  }
+
+  .workspace-page .workspace-page-preview-panel {
+    height: min(520px, 70vh);
+    min-height: 340px;
+  }
+
+  .workspace-page-preview-panel[data-collapsed='true'] {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .topbar-identity {
+    display: none;
+  }
+
+  .settings-action.product-mode-switch {
+    position: static;
+    left: auto;
+    flex: 0 0 auto;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .topbar-actions {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    min-width: 0;
+    gap: 0;
+    margin-left: 4px;
+  }
+
+  .topbar-actions .settings-action,
+  .topbar-actions .account-action,
+  .product-mode-switch {
+    min-width: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    gap: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group,
+  .workspace-page-schedule-row > .workspace-page-mode-trigger-wrap {
+    gap: 4px;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button,
+  .workspace-page-schedule-row > .workspace-page-mode-trigger-wrap,
+  .workspace-page-schedule-row > .workspace-page-mode-trigger-wrap .workspace-page-schedule-menu-trigger {
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    flex-basis: 76px !important;
+  }
+
+  .workspace-page-action-left-group .workspace-page-mode-button-template,
+  .workspace-page-action-left-group .workspace-page-mode-button-template:hover,
+  .workspace-page-action-left-group .workspace-page-mode-button-template:focus,
+  .workspace-page-action-left-group .workspace-page-mode-button-template:focus-visible,
+  .workspace-page-action-left-group .workspace-page-mode-button-template.is-active,
+  .workspace-page-action-left-group .workspace-page-mode-button-history,
+  .workspace-page-action-left-group .workspace-page-mode-button-history:hover,
+  .workspace-page-action-left-group .workspace-page-mode-button-history:focus,
+  .workspace-page-action-left-group .workspace-page-mode-button-history:focus-visible,
+  .workspace-page-action-left-group .workspace-page-mode-button-history.is-active {
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    flex-basis: 76px !important;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    font-size: 12px !important;
+  }
+
+  .workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle,
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    min-height: 34px;
+    flex-basis: 34px;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-main {
+    width: 90px;
+    min-width: 90px;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-menu-toggle {
+    width: 30px;
+    min-width: 30px;
+  }
+}
+
+.workspace-page .workspace-page-rich-text-schedule-stage button:focus-visible,
+.workspace-page .workspace-page-rich-text-template-stage button:focus-visible,
+.workspace-page .workspace-page-rich-text-buttons-stage button:focus-visible,
+.workspace-page .workspace-page-rich-text-chat-stage button:focus-visible,
+.workspace-page .workspace-page-rich-text-chat-stage [role='option']:focus-visible {
+  outline: 2px solid rgba(111, 155, 124, 0.76) !important;
+  outline-offset: 2px;
+}
+
+.workspace-page-publish-main.is-send,
+.workspace-page-publish-option.is-send,
+.workspace-page-publish-main.is-scheduled,
+.workspace-page-publish-option.is-scheduled,
+.workspace-page-publish-main.is-draft,
+.workspace-page-publish-option.is-draft {
+  --publish-mode-border: rgba(235, 243, 249, 0.72);
+  --publish-mode-fill: linear-gradient(145deg, rgba(235, 243, 249, 0.14), rgba(235, 243, 249, 0.045));
+  --publish-mode-text: #edf4f8;
+  --publish-mode-shadow: 0 0 12px rgba(235, 243, 249, 0.14);
+}
+
+.workspace-page-submit-actions .workspace-page-publish-main.is-send:hover:not(:disabled),
+.workspace-page-submit-actions .workspace-page-publish-main.is-scheduled:hover:not(:disabled),
+.workspace-page-submit-actions .workspace-page-publish-main.is-draft:hover:not(:disabled) {
+  border-color: var(--publish-mode-border) !important;
+  background: var(--publish-mode-fill) !important;
+  color: var(--publish-mode-text) !important;
+  box-shadow: var(--publish-mode-shadow) !important;
+}
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-send,
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-send:hover:not(:disabled),
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-send:focus-visible,
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-scheduled,
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-scheduled:hover:not(:disabled),
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-scheduled:focus-visible,
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-draft,
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-draft:hover:not(:disabled),
+.workspace-page-publish-menu-compact .workspace-page-publish-option.is-selected.is-draft:focus-visible {
+  border-color: #239dfb !important;
+  background: #239dfb !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(34, 47, 58, 0.16) !important;
+}
+
+.workspace-page .workspace-page-submit-actions .workspace-page-publish-main:not(:disabled) {
+  opacity: 1;
+  filter: saturate(1);
+  transition: filter 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.workspace-page .workspace-page-submit-actions .workspace-page-publish-main:hover:not(:disabled) {
+  filter: saturate(1.08);
+}
+
+@media (max-width: 760px) {
+  .workspace-page-main {
+    height: auto;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'media tools'
+      'publish publish';
+    align-items: center;
+    flex: 0 0 auto;
+    row-gap: 8px;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-media-row {
+    grid-area: media;
+    justify-self: start;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group {
+    grid-area: tools;
+    justify-self: end;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-submit-actions {
+    grid-area: publish;
+    justify-self: stretch;
+  }
+
+  .workspace-page-editor-panel,
+  .workspace-page-preview-panel {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .workspace-page-editor-panel {
+    align-items: stretch;
+  }
+
+  .workspace-page-editor-heading {
+    height: auto;
+    min-height: 64px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .workspace-page-mode-summary {
+    width: auto;
+    max-width: calc(100% - 16px);
+    flex-wrap: nowrap;
+    gap: 4px 8px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .workspace-page-mode-summary strong {
+    flex: 1 1 0;
+    max-width: 100%;
+    overflow: hidden;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .workspace-page-editor-shell {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .workspace-page-submit-actions {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-main {
+    flex: 1 1 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: none;
+    height: auto;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-trigger-main {
+    display: flex;
+    min-width: 0;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 8px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-menu-toggle {
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    min-width: 38px !important;
+  }
+
+  .workspace-page-draft-meta {
+    margin-left: 0;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .workspace-page-draft-footer .workspace-page-schedule-summary.has-draft-color-picker {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .workspace-page-draft-footer .workspace-page-publish-footer-content {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+@media (min-width: 761px) {
+  .workspace-page-draft-footer {
+    height: 62px !important;
+    min-height: 62px;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+  }
+
+  .workspace-page-draft-footer .workspace-page-draft-meta {
+    flex: 1 1 auto !important;
+    width: auto;
+    min-width: 0;
+    margin-left: 0;
+    padding: 0 14px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .workspace-page-draft-footer .workspace-page-schedule-summary {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 701px) {
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas:
+      'date-time date-time'
+      'quick-date quick-time';
+    align-content: start;
+    gap: 4px 10px;
+    overflow: hidden;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-row {
+    grid-area: date-time;
+    gap: 6px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-date {
+    flex: 1.06 1 0;
+    grid-template-columns: 16px minmax(0, 1fr);
+    padding-left: 0;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-time {
+    flex: 1 1 0;
+    grid-template-columns: 16px minmax(0, 1fr);
+    padding-left: 4px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-date-panel {
+    grid-area: quick-date;
+    min-width: 0;
+    align-content: start;
+    gap: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-time-panel {
+    grid-area: quick-time;
+    min-width: 0;
+    align-content: start;
+    gap: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-options-heading {
+    padding: 0 3px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-row button {
+    width: 100%;
+    min-width: 0;
+    padding: 0 3px;
+    overflow: hidden;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 701px) and (max-height: 800px) {
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-main {
+    grid-template-rows: 36px minmax(0, 1fr);
+    gap: 4px 8px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-row,
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-field {
+    height: 36px;
+    min-height: 36px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-row {
+    gap: 4px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-field {
+    padding-right: 4px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-time {
+    padding-left: 4px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-value,
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-segment {
+    box-sizing: border-box;
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-date-value .workspace-page-schedule-segment {
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-date-value .workspace-page-schedule-separator {
+    font-size: 15px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-time-value .workspace-page-schedule-segment {
+    padding: 2px;
+    font-size: 20px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-options-heading {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-row button {
+    min-height: 28px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) and (max-height: 800px) {
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 30px minmax(0, 1fr);
+    grid-template-areas:
+      'date-time date-time'
+      'quick-date quick-time';
+    align-content: start;
+    gap: 2px 6px;
+    overflow: hidden;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-row {
+    grid-area: date-time;
+    height: 30px;
+    min-height: 30px;
+    gap: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-date {
+    flex: 1.35 1 0;
+    grid-template-columns: 16px minmax(0, 1fr);
+    padding-left: 0;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-time {
+    flex: 1 1 0;
+    grid-template-columns: 16px minmax(0, 1fr);
+    padding-left: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-field {
+    height: 30px;
+    min-height: 30px;
+    padding-right: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-time {
+    padding-left: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-inline-value,
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-segment {
+    box-sizing: border-box;
+    height: 26px;
+    min-height: 26px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-date-value .workspace-page-schedule-segment {
+    padding: 1px;
+    font-size: 12px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-date-value .workspace-page-schedule-separator {
+    font-size: 12px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-time-value .workspace-page-schedule-segment {
+    padding: 1px;
+    font-size: 15px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-date-panel {
+    grid-area: quick-date;
+    min-width: 0;
+    align-content: start;
+    gap: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-time-panel {
+    grid-area: quick-time;
+    min-width: 0;
+    align-content: start;
+    gap: 2px;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-options-heading {
+    padding: 0 2px;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-row button {
+    width: 100%;
+    min-width: 0;
+    min-height: 22px;
+    padding: 0 2px;
+    overflow: hidden;
+    border-radius: 5px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 350px) and (max-height: 800px) {
+  .workspace-page-rich-text-schedule-stage.is-time-focus .workspace-page-schedule-quick-row button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .workspace-page-main {
+    height: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 52px 16px 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .workspace-page .workspace-page-editor-panel {
+    width: 100%;
+    height: clamp(360px, calc(100dvh - 130px), 720px);
+    min-width: 0;
+    min-height: 0;
+    max-height: clamp(360px, calc(100dvh - 130px), 720px);
+    max-width: none;
+    flex: 0 0 auto;
+    align-items: stretch;
+  }
+
+  .workspace-page .workspace-page-editor-heading {
+    height: 44px;
+    min-height: 44px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-bottom: 0;
+  }
+
+  .workspace-page .workspace-page-mode-summary {
+    width: auto;
+    max-width: min(calc(100% - 16px), 520px);
+    flex: 0 1 auto;
+    top: 8px;
+    right: 8px;
+  }
+
+  .workspace-page .workspace-page-preview-panel {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: min(560px, 72vh);
+    min-height: 340px;
+    max-height: none;
+    flex: 0 0 auto;
+  }
+
+  .workspace-page .workspace-page-preview-panel[data-visible='false'] {
+    display: none;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-height: 50px;
+    gap: 8px;
+    padding: 6px 8px;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-media-row,
+  .workspace-page-schedule-row > .workspace-page-action-left-group,
+  .workspace-page-schedule-row > .workspace-page-submit-actions {
+    grid-area: auto;
+    justify-self: auto;
+  }
+
+  .workspace-page-action-left-group {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .workspace-page-submit-actions {
+    flex: 0 0 auto;
+    width: auto;
+    margin-left: auto;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-main {
+    flex: 0 0 clamp(90px, 18vw, 140px) !important;
+    width: clamp(90px, 18vw, 140px) !important;
+    min-width: clamp(90px, 18vw, 140px) !important;
+    height: 38px !important;
+    min-height: 38px !important;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-menu-toggle {
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+  }
+
+  .workspace-page-main .workspace-page-schedule-controls,
+  .workspace-page-main .workspace-page-schedule-button {
+    width: auto;
+  }
+
+  .workspace-page-attachment-tray {
+    flex-basis: 56px;
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .workspace-page-attachment-tray .workspace-page-media-items {
+    height: 100%;
+    min-height: 0;
+    gap: 0;
+    max-width: min(640px, 100%);
+    padding: 0 8px;
+    scroll-padding-right: 8px;
+    scroll-padding-left: 8px;
+  }
+
+  .workspace-page-attachment-tray .workspace-page-attachment-scrollbar {
+    max-width: min(640px, 100%);
+  }
+
+  .workspace-page-attachment-card {
+    flex: 0 0 min(220px, calc(100vw - 40px));
+    width: min(220px, calc(100vw - 40px));
+    min-width: 156px;
+    height: 38px;
+    min-height: 38px;
+    gap: 7px;
+    padding: 0 26px 0 4px;
+  }
+
+  .workspace-page-attachment-card.workspace-page-photo-album-card {
+    flex: 0 0 min(190px, 64vw);
+    width: min(190px, 64vw);
+    min-width: 156px;
+    height: 38px;
+    padding: 0 48px 0 4px;
+    gap: 7px;
+  }
+
+  .workspace-page-photo-album-card .workspace-page-attachment-copy {
+    display: grid;
+    min-width: 0;
+  }
+
+  .workspace-page-attachment-thumbnail,
+  .workspace-page-attachment-file-mark {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .workspace-page-attachment-copy {
+    display: grid;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .workspace-page-main {
+    gap: 12px;
+    padding: 14px 10px 18px;
+  }
+
+  .workspace-page .workspace-page-editor-heading {
+    height: 38px;
+    min-height: 38px;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    gap: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .workspace-page-action-left-group {
+    gap: 4px;
+  }
+
+  .workspace-page-action-left-group .workspace-page-mode-button,
+  .workspace-page-action-left-group .workspace-page-mode-button:hover,
+  .workspace-page-action-left-group .workspace-page-mode-button:focus-visible,
+  .workspace-page-action-left-group .workspace-page-mode-button.is-active {
+    width: clamp(48px, 12vw, 76px) !important;
+    min-width: clamp(48px, 12vw, 76px) !important;
+    max-width: clamp(48px, 12vw, 76px) !important;
+    flex-basis: clamp(48px, 12vw, 76px) !important;
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+    font-size: 12px !important;
+  }
+
+  .workspace-page .workspace-page-preview-toggle,
+  .workspace-page .workspace-page-attachment-toggle {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    min-height: 34px;
+    flex-basis: 34px;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-main {
+    width: 90px;
+  }
+}
+
+@media (max-width: 1100px) and (max-height: 540px) {
+  .workspace-page-rich-text-stage:has(.workspace-page-rich-text-schedule-stage:is(.is-time-focus, .is-repeat-focus)) {
+    min-height: 228px;
+  }
+
+  .workspace-page-editor-canvas:has(.workspace-page-rich-text-schedule-stage.is-active:is(.is-time-focus, .is-repeat-focus)) .workspace-page-form-row-body {
+    flex: 0 0 300px;
+    min-height: 300px;
+  }
+
+  .workspace-page .workspace-page-attachment-tray {
+    flex-basis: 56px;
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
+  }
+
+  .workspace-page .workspace-page-attachment-tray .workspace-page-media-items {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .workspace-page .workspace-page-action-row.workspace-page-schedule-row {
+    position: static;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .workspace-page-rich-text-editor {
+    padding-bottom: 6px;
+  }
+
+  .workspace-page-rich-text-editor.is-toolbar-active {
+    height: 100%;
+  }
+
+  .workspace-page-rich-text-editor.is-toolbar-active .workspace-page-rich-text-input {
+    flex: 1 1 0;
+    min-height: 0;
+    margin-bottom: 8px;
+  }
+
+  .workspace-page-action-row.workspace-page-schedule-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'media publish'
+      'tools tools';
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 4px;
+    min-height: 92px;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-media-row {
+    grid-area: media;
+    justify-self: start;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group {
+    grid-area: tools;
+    width: 100%;
+    min-width: 0;
+    flex: 0 1 auto;
+    justify-self: stretch;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-submit-actions {
+    grid-area: publish;
+    justify-self: end;
+    margin-left: 0;
+  }
+
+  .workspace-page-action-left-group {
+    width: 100%;
+    min-width: 0;
+    gap: 4px;
+  }
+
+  .workspace-page-action-left-group .workspace-page-schedule-compact-group {
+    min-width: 0;
+    flex: 0 1 auto;
+    gap: 4px;
+  }
+
+  .workspace-page .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button,
+  .workspace-page .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button:hover,
+  .workspace-page .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button:focus-visible,
+  .workspace-page .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button.is-active {
+    flex: 0 0 50px !important;
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .workspace-page-main {
+    height: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 40px 16px 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .workspace-page .workspace-page-editor-panel {
+    width: auto;
+    height: clamp(320px, calc(100dvh - 140px), 720px);
+    min-width: 0;
+    min-height: 0;
+    max-height: clamp(320px, calc(100dvh - 140px), 720px);
+    flex: 1 1 0;
+    align-self: flex-start;
+  }
+
+  .workspace-page .workspace-page-preview-panel {
+    width: clamp(260px, 32vw, 340px);
+    min-width: 260px;
+    max-width: 340px;
+    height: clamp(320px, calc(100dvh - 140px), 720px);
+    min-height: 320px;
+    max-height: 720px;
+    flex: 0 1 clamp(260px, 32vw, 340px);
+    align-self: flex-start;
+  }
+
+}
+
+@media (min-width: 761px) and (max-width: 840px) {
+  .workspace-page-action-row.workspace-page-schedule-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2px !important;
+    min-height: 50px;
+  }
+
+  .workspace-page .workspace-page-schedule-row > .workspace-page-action-left-group {
+    gap: 2px !important;
+  }
+
+  .workspace-page .workspace-page-schedule-compact-group {
+    gap: 2px !important;
+  }
+
+  .workspace-page .workspace-page-submit-actions {
+    gap: 0 !important;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-media-row {
+    grid-area: auto;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group {
+    grid-area: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-submit-actions {
+    grid-area: auto;
+    flex: 0 0 auto;
+    width: auto;
+    margin-left: 0;
+  }
+
+  .workspace-page-schedule-row .workspace-page-media-row .workspace-page-attachment-toggle,
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-preview-toggle {
+    flex: 0 0 32px;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .workspace-page-schedule-row > .workspace-page-action-left-group .workspace-page-mode-button {
+    flex: 0 1 58px !important;
+    width: 58px !important;
+    min-width: 48px !important;
+    max-width: 58px !important;
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+    font-size: 10px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .workspace-page .workspace-page-schedule-row .workspace-page-schedule-compact-button {
+    flex: 0 1 48px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+  }
+
+  .workspace-page .workspace-page-submit-actions .workspace-page-publish-main {
+    flex: 0 0 84px !important;
+    width: 84px !important;
+    min-width: 84px !important;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .workspace-page-submit-actions .workspace-page-publish-trigger-main {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px;
+    letter-spacing: -0.03em !important;
+  }
+
+  .workspace-page .workspace-page-submit-actions .workspace-page-publish-menu-toggle {
+    flex: 0 0 28px !important;
+    width: 28px !important;
+    min-width: 28px !important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) and (max-height: 640px) {
+  .workspace-page-main {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .workspace-page .workspace-page-editor-panel {
+    height: max(500px, calc(100dvh - 140px));
+    min-height: 500px;
+    max-height: none;
+  }
+
+  .workspace-page .workspace-page-preview-panel {
+    height: max(500px, calc(100dvh - 140px));
+    min-height: 500px;
+    max-height: none;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 1100px) {
+  .workspace-page-rich-text-editor {
+    height: 100%;
+    padding-bottom: 6px;
+  }
+
+  .workspace-page-rich-text-editor .workspace-page-rich-text-input {
+    flex: 1 1 0;
+    min-height: 0;
+    margin-bottom: 8px;
+  }
+
+  .workspace-page-preview-panel:not([data-collapsed='true']) .chat-preview-stand.is-mobile .chat-preview-toolbar {
+    flex: 0 0 36px;
+    height: 36px;
+    min-height: 36px;
+  }
+
+  .workspace-page-preview-panel:not([data-collapsed='true']) .chat-preview-stand.is-mobile .chat-preview-toolbar-label {
+    transform: translateY(5px);
+  }
+
+  .workspace-page-preview-panel:not([data-collapsed='true']) .chat-preview-stand.is-mobile .chat-preview-window-shell {
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  @media (max-width: 1100px) {
+    .workspace-page-preview-panel:not([data-collapsed='true']):has(.chat-preview-stand.is-mobile) {
+      --workspace-page-preview-window-width-reserve: 13px;
+    }
+
+    .workspace-page-preview-panel:not([data-collapsed='true']) .chat-preview-stand.is-mobile .chat-preview-window-shell {
+      gap: 0;
+    }
+
+    .workspace-page-preview-panel:not([data-collapsed='true']) .chat-preview-stand.is-mobile .chat-preview-scrollbar-track {
+      position: absolute;
+      top: 104px;
+      right: 7px;
+      bottom: 10px;
+      margin: 0;
+    }
+  }
+
+  .workspace-page-preview-panel:not([data-collapsed='true']) .chat-preview-stand.is-mobile .chat-preview-window {
+    flex: 0 1 320px;
+    width: 100%;
+    max-width: 320px;
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace-page .workspace-page-preview-panel:not([data-collapsed='true']) {
+    height: clamp(360px, calc(100dvh - 130px), 720px);
+    min-height: 360px;
+    max-height: 720px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 760px) and (max-height: 640px) {
+  .workspace-page .workspace-page-editor-panel {
+    height: max(500px, calc(100dvh - 130px));
+    min-height: 500px;
+    max-height: none;
+  }
+
+  .workspace-page .workspace-page-preview-panel:not([data-collapsed='true']) {
+    height: max(500px, calc(100dvh - 130px));
+    min-height: 500px;
+    max-height: none;
+    flex: 0 0 auto;
+  }
+}
+
